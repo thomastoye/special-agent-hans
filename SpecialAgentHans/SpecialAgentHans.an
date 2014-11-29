@@ -2,23 +2,15 @@
 {
 
 	"HTMLFileName":"SpecialAgentHans.html",
-	"symbol_stage":{
-		"dummyStageParentWidth":"800px",
-		"element_${Stage}":{
-			"timelineColor2":"0xcbbd71",
-			"timelineColor3":"0x7b7652",
-			"timelineColor":"0xeedf79"},
-		"defaultStageParentWidth":"800px",
-		"defaultStageParentHeight":"480px",
-		"dummyStageParentHeight":"480px"},
-	"CompZoomFactor":"100",
-	"StageZoomFactor":"100",
-	"usedBOM":"false",
-	"nextElementColorIndex":"2",
-	"stage-Default Timeline_playhead_ms":"0",
-	"pref__general__FilterNonAnimatedElements":"false",
+	"pref__general__AutoKeyframeProperties":"true",
+	"expanded:images/game-over.png":"nil",
 	"ModelData":"{\
 \"stage\": {\
+   \"timelines\": {\
+      \"Default Timeline\": {\
+      }\
+   }},\
+\"game_over\": {\
    \"timelines\": {\
       \"Default Timeline\": {\
       }\
@@ -32,4 +24,114 @@
 \
    }}\
 }",
-	"viewStartY":"0"}
+	"expanded:images/Sivev.svg":"nil",
+	"expanded:images/Kabel_blauw.svg":"nil",
+	"pref__general__codeView":"fullView",
+	"expanded:images/sivev-wins.png":"nil",
+	"symbol_game_over":{
+		"element_${Rectangle}":{
+			"timelineColor2":"0xd35d6e",
+			"timelineColor3":"0x7e4b52",
+			"animationEnabled":"false",
+			"timelineColor":"0xfb657a"},
+		"element_${game-over}":{
+			"timelineColor2":"0xb099ce",
+			"timelineColor3":"0x70657c",
+			"animationEnabled":"true",
+			"timelineColor":"0xceaef4"},
+		"element_${Sivev}":{
+			"timelineColor2":"0x81aa62",
+			"timelineColor3":"0x5b6c4d",
+			"animationEnabled":"true",
+			"timelineColor":"0x91c767"},
+		"element_${sivev-wins}":{
+			"timelineColor2":"0x4fa275",
+			"timelineColor3":"0x456a55",
+			"animationEnabled":"true",
+			"timelineColor":"0x50bd82"}},
+	"pref__general__FilterNonAnimatedElements":"false",
+	"expanded:images/title.png":"nil",
+	"viewStartMs":"5555",
+	"pref__general__AutoKeyframePropertiesArmed":"false",
+	"StageZoomFactor":"100",
+	"symbol_stage":{
+		"element_${title3}":{
+			"timelineColor2":"0x1aa38f",
+			"timelineColor3":"0x2a6a61",
+			"animationEnabled":"false",
+			"timelineColor":"0x00bda4"},
+		"dummyStageParentWidth":"800px",
+		"element_${title}":{
+			"timelineColor2":"0x81aa62",
+			"timelineColor3":"0x5b6c4d",
+			"animationEnabled":"false",
+			"timelineColor":"0x91c767"},
+		"dummyStageParentHeight":"480px",
+		"element_${title2}":{
+			"timelineColor2":"0x4fa275",
+			"timelineColor3":"0x456a55",
+			"animationEnabled":"false",
+			"timelineColor":"0x50bd82"},
+		"element_${title6}":{
+			"timelineColor2":"0x1095d2",
+			"invisible":"false",
+			"timelineColor":"0x00a9fa",
+			"animationEnabled":"true",
+			"timelineColor3":"0x29647e"},
+		"element_${game_over}":{
+			"timelineColor2":"0xba5b89",
+			"timelineColor3":"0x734a5f",
+			"animationEnabled":"true",
+			"timelineColor":"0xdb619d"},
+		"element_${title4}":{
+			"timelineColor2":"0x168c84",
+			"timelineColor3":"0x2a605c",
+			"animationEnabled":"false",
+			"timelineColor":"0x00a096"},
+		"element_${game-over}":{
+			"timelineColor2":"0xd8b467",
+			"timelineColor3":"0x81714f",
+			"animationEnabled":"false",
+			"timelineColor":"0xffd46d"},
+		"defaultStageParentHeight":"480px",
+		"element_${title5}":{
+			"timelineColor2":"0x326a96",
+			"timelineColor3":"0x385063",
+			"animationEnabled":"false",
+			"timelineColor":"0x2f73ad"},
+		"element_${Stage}":{
+			"timelineColor2":"0xcbbd71",
+			"invisible":"false",
+			"timelineColor":"0xeedf79",
+			"timelineTreeOpened":"true",
+			"timelineColor3":"0x7b7652"},
+		"defaultStageParentWidth":"800px",
+		"element_${Rectangle}":{
+			"timelineColor2":"0xcbbd71",
+			"timelineColor3":"0x7b7652",
+			"animationEnabled":"false",
+			"timelineColor":"0xeedf79"},
+		"element_${Group}":{
+			"timelineColor2":"0x5a558a",
+			"invisible":"false",
+			"timelineColor":"0x63599f",
+			"timelineTreeOpened":"true",
+			"timelineColor3":"0x4a485e"},
+		"element_${Hans}":{
+			"timelineColor2":"0x107faa",
+			"invisible":"false",
+			"timelineColor":"0x008dc8",
+			"animationEnabled":"true",
+			"timelineColor3":"0x295a6d"}},
+	"TransitionIdCounter":"28",
+	"CompZoomFactor":"100",
+	"viewStartY":"0",
+	"pixelsPerMs":"0.2",
+	"expanded:images/Hans.svg":"nil",
+	"usedBOM":"false",
+	"stage-Default Timeline_mark_ms":"-1",
+	"nextElementColorIndex":"4",
+	"stage-Default Timeline_playhead_ms":"10000",
+	"pref__general__GenerateSmoothTransitions":"true",
+	"game_over-Default Timeline_playhead_ms":"0",
+	"game_over-Default Timeline_mark_ms":"-1"}
