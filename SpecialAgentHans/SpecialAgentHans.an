@@ -2,6 +2,8 @@
 {
 
 	"HTMLFileName":"SpecialAgentHans.html",
+	"symbol_scrolling_text":{},
+	"finale_game-Default Timeline_playhead_ms":"0",
 	"pref__general__AutoKeyframeProperties":"true",
 	"expanded:images/game-over.png":"nil",
 	"ModelData":"{\
@@ -17,16 +19,55 @@
    }},\
 \"Preloader\": {\
    \"timelines\": {\
-\
+      \"Default Timeline\": {\
+      }\
    }},\
 \"Down-level\": {\
    \"timelines\": {\
 \
+   }},\
+\"finale_game\": {\
+   \"timelines\": {\
+      \"Default Timeline\": {\
+      }\
    }}\
 }",
 	"expanded:images/Sivev.svg":"nil",
+	"symbol_finale_game":{
+		"dummyStageParentWidth":"800px",
+		"dummyStageParentHeight":"480px",
+		"element_${Text3}":{
+			"timelineColor2":"0x107faa",
+			"timelineColor3":"0x295a6d",
+			"timelineColor":"0x008dc8"},
+		"element_${scrolling_text}":{
+			"timelineColor2":"0x326a96",
+			"timelineColor3":"0x385063",
+			"timelineColor":"0x2f73ad"},
+		"element_${Text2}":{
+			"timelineColor2":"0x1095d2",
+			"timelineColor3":"0x29647e",
+			"timelineColor":"0x00a9fa"},
+		"defaultStageParentHeight":"480px",
+		"element_${bg}":{
+			"timelineColor2":"0xcbbd71",
+			"timelineColor3":"0x7b7652",
+			"animationEnabled":"false",
+			"timelineColor":"0xeedf79"},
+		"defaultStageParentWidth":"800px",
+		"element_${scrolling_text2}":{
+			"timelineColor2":"0x5a558a",
+			"timelineColor3":"0x4a485e",
+			"animationEnabled":"true",
+			"timelineColor":"0x63599f"}},
+	"Preloader-Default Timeline_playhead_ms":"0",
+	"symbol_Preloader":{
+		"defaultStageParentWidth":"800px",
+		"defaultStageParentHeight":"480px",
+		"dummyStageParentWidth":"800px",
+		"dummyStageParentHeight":"480px"},
 	"expanded:images/Kabel_blauw.svg":"nil",
-	"pref__general__codeView":"fullView",
+	"pref__general__codeView":"sectionalView",
 	"expanded:images/sivev-wins.png":"nil",
 	"symbol_game_over":{
 		"element_${Rectangle}":{
@@ -51,15 +92,10 @@
 			"timelineColor":"0x50bd82"}},
 	"pref__general__FilterNonAnimatedElements":"false",
 	"expanded:images/title.png":"nil",
-	"viewStartMs":"5555",
-	"pref__general__AutoKeyframePropertiesArmed":"false",
+	"viewStartMs":"-4.9999999999994",
+	"pref__general__AutoKeyframePropertiesArmed":"true",
 	"StageZoomFactor":"100",
 	"symbol_stage":{
-		"element_${title3}":{
-			"timelineColor2":"0x1aa38f",
-			"timelineColor3":"0x2a6a61",
-			"animationEnabled":"false",
-			"timelineColor":"0x00bda4"},
 		"dummyStageParentWidth":"800px",
 		"element_${title}":{
 			"timelineColor2":"0x81aa62",
@@ -72,12 +108,6 @@
 			"timelineColor3":"0x456a55",
 			"animationEnabled":"false",
 			"timelineColor":"0x50bd82"},
-		"element_${title6}":{
-			"timelineColor2":"0x1095d2",
-			"invisible":"false",
-			"timelineColor":"0x00a9fa",
-			"animationEnabled":"true",
-			"timelineColor3":"0x29647e"},
 		"element_${game_over}":{
 			"timelineColor2":"0xba5b89",
 			"timelineColor3":"0x734a5f",
@@ -88,17 +118,33 @@
 			"timelineColor3":"0x2a605c",
 			"animationEnabled":"false",
 			"timelineColor":"0x00a096"},
+		"element_${title5}":{
+			"timelineColor2":"0x326a96",
+			"timelineColor3":"0x385063",
+			"animationEnabled":"false",
+			"timelineColor":"0x2f73ad"},
+		"element_${Rectangle}":{
+			"timelineColor2":"0x168c84",
+			"timelineColor3":"0x2a605c",
+			"animationEnabled":"false",
+			"timelineColor":"0x00a096"},
+		"element_${finale_game}":{
+			"timelineColor2":"0x1aa38f",
+			"timelineColor3":"0x2a6a61",
+			"animationEnabled":"true",
+			"timelineColor":"0x00bda4"},
 		"element_${game-over}":{
 			"timelineColor2":"0xd8b467",
 			"timelineColor3":"0x81714f",
 			"animationEnabled":"false",
 			"timelineColor":"0xffd46d"},
 		"defaultStageParentHeight":"480px",
-		"element_${title5}":{
-			"timelineColor2":"0x326a96",
-			"timelineColor3":"0x385063",
-			"animationEnabled":"false",
-			"timelineColor":"0x2f73ad"},
+		"element_${title6}":{
+			"timelineColor2":"0x1095d2",
+			"invisible":"false",
+			"timelineColor":"0x00a9fa",
+			"animationEnabled":"true",
+			"timelineColor3":"0x29647e"},
 		"element_${Stage}":{
 			"timelineColor2":"0xcbbd71",
 			"invisible":"false",
@@ -106,11 +152,11 @@
 			"timelineTreeOpened":"true",
 			"timelineColor3":"0x7b7652"},
 		"defaultStageParentWidth":"800px",
-		"element_${Rectangle}":{
-			"timelineColor2":"0xcbbd71",
-			"timelineColor3":"0x7b7652",
+		"element_${title3}":{
+			"timelineColor2":"0x1aa38f",
+			"timelineColor3":"0x2a6a61",
 			"animationEnabled":"false",
-			"timelineColor":"0xeedf79"},
+			"timelineColor":"0x00bda4"},
 		"element_${Group}":{
 			"timelineColor2":"0x5a558a",
 			"invisible":"false",
@@ -123,14 +169,14 @@
 			"timelineColor":"0x008dc8",
 			"animationEnabled":"true",
 			"timelineColor3":"0x295a6d"}},
-	"TransitionIdCounter":"28",
+	"TransitionIdCounter":"30",
 	"CompZoomFactor":"100",
 	"viewStartY":"0",
-	"pixelsPerMs":"0.2",
+	"pixelsPerMs":"1",
 	"expanded:images/Hans.svg":"nil",
 	"usedBOM":"false",
 	"stage-Default Timeline_mark_ms":"-1",
-	"nextElementColorIndex":"4",
+	"nextElementColorIndex":"11",
 	"stage-Default Timeline_playhead_ms":"10000",
 	"pref__general__GenerateSmoothTransitions":"true",
 	"game_over-Default Timeline_playhead_ms":"0",

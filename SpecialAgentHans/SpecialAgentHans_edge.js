@@ -16,6 +16,7 @@
         resources = [
         ],
         scripts = [
+            js+"jquery-1.11.1.min.js"
         ],
         symbols = {
             "stage": {
@@ -47,6 +48,13 @@
                             display: 'none',
                             type: 'rect',
                             rect: ['0', '0', '800', '480', 'auto', 'auto']
+                        },
+                        {
+                            id: 'finale_game',
+                            symbolName: 'finale_game',
+                            display: 'none',
+                            type: 'rect',
+                            rect: ['0', '0', '800', '480', 'auto', 'auto']
                         }
                     ],
                     style: {
@@ -74,6 +82,26 @@
                         "game_start": 11000
                     },
                     data: [
+                        [
+                            "eid28",
+                            "display",
+                            10000,
+                            0,
+                            "linear",
+                            "${finale_game}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid29",
+                            "display",
+                            11000,
+                            0,
+                            "linear",
+                            "${finale_game}",
+                            'block',
+                            'none'
+                        ],
                         [
                             "eid2",
                             "display",
@@ -255,6 +283,48 @@
                             '0px',
                             '-480px'
                         ]
+                    ]
+                }
+            },
+            "finale_game": {
+                version: "5.0.1",
+                minimumCompatibleVersion: "5.0.0",
+                build: "5.0.1.386",
+                scaleToFit: "none",
+                centerStage: "none",
+                resizeInstances: false,
+                content: {
+                    dom: [
+                        {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            id: 'bg',
+                            stroke: [0, 'rgba(0,0,0,1)', 'none'],
+                            type: 'rect',
+                            fill: ['rgba(0,0,0,1.00)']
+                        },
+                        {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            id: 'scrolling_text',
+                            text: 'Loading...<br><br>',
+                            font: ['Lucida Console, Monaco, monospace', [12, 'px'], 'rgba(23,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
+                            type: 'text'
+                        }
+                    ],
+                    style: {
+                        '${symbolSelector}': {
+                            isStage: 'true',
+                            rect: [undefined, undefined, '800px', '480px']
+                        }
+                    }
+                },
+                timeline: {
+                    duration: 1000,
+                    autoPlay: false,
+                    labels: {
+                        "intro_endgame": 1000
+                    },
+                    data: [
+
                     ]
                 }
             }
