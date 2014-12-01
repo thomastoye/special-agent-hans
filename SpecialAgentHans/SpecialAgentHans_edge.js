@@ -50,6 +50,13 @@
                             rect: ['0', '0', '800', '480', 'auto', 'auto']
                         },
                         {
+                            id: 'highscores',
+                            symbolName: 'highscores',
+                            display: 'none',
+                            type: 'rect',
+                            rect: ['0', '0', '800', '480', 'auto', 'auto']
+                        },
+                        {
                             id: 'finale_game',
                             symbolName: 'finale_game',
                             display: 'none',
@@ -82,6 +89,26 @@
                         "game_start": 11000
                     },
                     data: [
+                        [
+                            "eid50",
+                            "display",
+                            5000,
+                            0,
+                            "linear",
+                            "${highscores}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid51",
+                            "display",
+                            6000,
+                            0,
+                            "linear",
+                            "${highscores}",
+                            'block',
+                            'none'
+                        ],
                         [
                             "eid28",
                             "display",
@@ -182,27 +209,28 @@
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            type: 'image',
                             id: 'game-over',
+                            type: 'image',
                             rect: ['0px', '485px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/game-over.png', '0px', '0px']
                         },
                         {
-                            type: 'image',
                             id: 'sivev-wins',
+                            type: 'image',
                             rect: ['800px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/sivev-wins.png', '0px', '0px']
                         },
                         {
-                            type: 'image',
                             id: 'Sivev',
+                            type: 'image',
                             rect: ['-242px', '98px', '201px', '284px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/Sivev.svg', '0px', '0px']
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            rect: [null, null, '800px', '480px']
+                            isStage: 'true',
+                            rect: [undefined, undefined, '800px', '480px']
                         }
                     }
                 },
@@ -372,6 +400,101 @@
                 timeline: {
                     duration: 0,
                     autoPlay: true,
+                    data: [
+
+                    ]
+                }
+            },
+            "highscores": {
+                version: "5.0.1",
+                minimumCompatibleVersion: "5.0.0",
+                build: "5.0.1.386",
+                scaleToFit: "none",
+                centerStage: "none",
+                resizeInstances: false,
+                content: {
+                    dom: [
+                        {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            id: 'bg',
+                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
+                            type: 'rect',
+                            fill: ['rgba(0,0,0,1.00)']
+                        },
+                        {
+                            id: 'terminal',
+                            type: 'image',
+                            rect: ['128px', '55px', '543px', '355px', 'auto', 'auto'],
+                            fill: ['rgba(0,0,0,0)', 'images/terminal.png', '0px', '0px']
+                        },
+                        {
+                            rect: ['145px', '86px', '509px', '312px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [14, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            id: 'contents',
+                            text: 'Loading highscores...',
+                            align: 'left',
+                            type: 'text'
+                        },
+                        {
+                            type: 'rect',
+                            id: 'back_button',
+                            symbolName: 'back_button',
+                            transform: [[], [], [], ['0.89474', '0.89474']],
+                            rect: ['-7px', '-4px', '129', '76', 'auto', 'auto']
+                        }
+                    ],
+                    style: {
+                        '${symbolSelector}': {
+                            isStage: 'true',
+                            rect: [undefined, undefined, '800px', '480px']
+                        }
+                    }
+                },
+                timeline: {
+                    duration: 0,
+                    autoPlay: true,
+                    data: [
+
+                    ]
+                }
+            },
+            "back_button": {
+                version: "5.0.1",
+                minimumCompatibleVersion: "5.0.0",
+                build: "5.0.1.386",
+                scaleToFit: "none",
+                centerStage: "none",
+                resizeInstances: false,
+                content: {
+                    dom: [
+                        {
+                            rect: ['0px', '0px', '129px', '76px', 'auto', 'auto'],
+                            borderRadius: ['10px', '10px', '10px', '10px'],
+                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
+                            id: 'RoundRect2',
+                            opacity: '0.17073170731707',
+                            type: 'rect',
+                            fill: ['rgba(255,255,255,1)']
+                        },
+                        {
+                            rect: ['22px', '9px', '86px', '57px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [58, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            id: 'Text4',
+                            text: '&lt;=',
+                            align: 'left',
+                            type: 'text'
+                        }
+                    ],
+                    style: {
+                        '${symbolSelector}': {
+                            isStage: 'true',
+                            rect: [undefined, undefined, '129px', '76px']
+                        }
+                    }
+                },
+                timeline: {
+                    duration: 0,
+                    autoPlay: false,
                     data: [
 
                     ]

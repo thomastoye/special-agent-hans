@@ -11,7 +11,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
 // add globals here
 var score = 0;
-
+var stageRef;
 
    //Edge symbol: 'stage'
    (function(symbolName) {
@@ -34,7 +34,12 @@ var score = 0;
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 10000, function(sym, e) {
          sym.getSymbol("finale_game").play();
          sym.stop();
-         console.log("arrived at finale_game");
+
+      });
+      //Edge binding end
+
+      Symbol.bindSymbolAction(compId, symbolName, "creationComplete", function(sym, e) {
+         stageRef = sym;
 
       });
       //Edge binding end
@@ -87,7 +92,7 @@ var score = 0;
          		clearInterval(clearInt);
          		clearInterval(randInt);
          		sym.play("intro_endgame");
-         	}, 1000 // TODO change to ~6200
+         	}, 6200
          )
 
       });
@@ -161,7 +166,7 @@ var score = 0;
          $(window).on("keyup", ev);
          
          var timeout = setTimeout(function() {
-         	alert("you spawned " + terminalsSpawned);
+         	score += terminalsSpawned;
          	$(window).off("keyup", ev);
          	clearTimeout(timeout);
          	sym.stop("game_aftermath");
@@ -186,7 +191,10 @@ var score = 0;
       //Edge binding end
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function(sym, e) {
-         console.log("go_postgame!");
+         
+         // Play the timeline at a label or specific time. For example:
+         // sym.play(500); or sym.play("myLabel");
+         sym.getComposition().getStage().stop("highscores");
 
       });
       //Edge binding end
@@ -216,5 +224,44 @@ var score = 0;
 
    })("terminal");
    //Edge symbol end:'terminal'
+
+   //=========================================================
+   
+   //Edge symbol: 'highscores'
+   (function(symbolName) {   
+   
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+         sym.stop();
+         var jsonUrl = "http://student.howest.be/thomas.toye/specialagenthans/backend/api/highscores.php";
+         
+         $.getJSON(jsonUrl, function(data, idx) {
+         	var scores = data.reduce(function(prev, curr, idx) {
+         		if(typeof prev == "string")
+         			return prev + "<br/>" + (idx + 1) + ". " + curr.name + ": " + curr.score;
+         		return idx + ". " + prev.name + ": " + prev.score + "<br/>" + (idx + 1) + ". " + curr.name + ": " + curr.score
+         	});
+         
+         	sym.$("contents").html(scores);
+         });
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${back_button}", "click", function(sym, e) {
+         sym.getComposition().getStage().stop("menu");
+
+      });
+      //Edge binding end
+
+   })("highscores");
+   //Edge symbol end:'highscores'
+
+   //=========================================================
+   
+   //Edge symbol: 'back_button'
+   (function(symbolName) {   
+   
+   })("back_button");
+   //Edge symbol end:'back_button'
 
 })(window.jQuery || AdobeEdge.$, AdobeEdge, "EDGE-7842125");
