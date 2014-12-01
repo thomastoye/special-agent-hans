@@ -87,7 +87,7 @@ var score = 0;
          		clearInterval(clearInt);
          		clearInterval(randInt);
          		sym.play("intro_endgame");
-         	}, 6200
+         	}, 1000 // TODO change to ~6200
          )
 
       });
@@ -116,7 +116,7 @@ var score = 0;
          			clearInterval(typewriter);
          			return;
          		}
-         		
+         
          		var chr = line[pos];
          		if(chr == '\n') chr = "<br/>";
          		append(chr);
@@ -124,11 +124,97 @@ var score = 0;
          	}, 20
          )
          
+         var ev = function(e) {
+         	if(e.which != 32) return;
+         	$(window).off("keypress", ev);
+         	clearInterval(typewriter);
+         	sym.stop("game_endgame");
+         }
+         
+         $(window).on("keypress", ev);
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 2000, function(sym, e) {
+         var text = sym.$("scrolling_text");
+         text.text("");
+         
+         var terminalsSpawned = 0;
+         
+         // random between a and b (both inclusive, so [a, b])
+         function randomInc(a, b) {
+             return Math.floor(Math.random() * (b - a + 1)) + a;
+         }
+         
+         // register event handler to spawn terminals
+         // to turn off: $(window).off("keyup", ev);
+         var ev = function(e) {
+         	if(e.which != 32) return;
+         	terminalsSpawned++;
+         	var newTerminal = sym.createChildSymbol("terminal", sym.$("terminal_container"));
+         	var el = newTerminal.getSymbolElement(); // sought so long for this
+         	el.css({"position":"absolute", "top": randomInc(1,400) + "px", "left": randomInc(1,400) + "px"});
+         }
+         
+         $(window).on("keyup", ev);
+         
+         var timeout = setTimeout(function() {
+         	alert("you spawned " + terminalsSpawned);
+         	$(window).off("keyup", ev);
+         	clearTimeout(timeout);
+         	sym.stop("game_aftermath");
+         }, 10 * 1000);
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 3000, function(sym, e) {
+         
+         var closeInt = window.setInterval(function() {
+         	var syms = sym.getChildSymbols();
+         	if(syms.length == 0) {
+         		window.clearInterval(closeInt);
+         		sym.play("go_postgame");
+         	} else {
+         		syms[syms.length - 1].deleteSymbol();
+         	}
+         }, 100);
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function(sym, e) {
+         console.log("go_postgame!");
 
       });
       //Edge binding end
 
    })("finale_game");
    //Edge symbol end:'finale_game'
+
+   //=========================================================
+   
+   //Edge symbol: 'terminal'
+   (function(symbolName) {   
+   
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+         var text = sym.$("contents");
+         
+         // random between a and b (both inclusive, so [a, b])
+         function randomInc(a, b) {
+             return Math.floor(Math.random() * (b - a + 1)) + a;
+         }
+         
+         var possibilities = ["C:\\> Hacking Level 15 core switch...", "C:\\> Turning on repeaters...", "/var/log$ rm -Rf /", "/tmp$ ./uploadVirus.sh"];
+         
+         text.text(possibilities[randomInc(0, possibilities.length - 1)]);
+
+      });
+      //Edge binding end
+
+   })("terminal");
+   //Edge symbol end:'terminal'
 
 })(window.jQuery || AdobeEdge.$, AdobeEdge, "EDGE-7842125");

@@ -16,7 +16,7 @@
         resources = [
         ],
         scripts = [
-            js+"jquery-1.11.1.min.js"
+            js+"jquery-1.11.1.js"
         ],
         symbols = {
             "stage": {
@@ -103,22 +103,22 @@
                             'none'
                         ],
                         [
-                            "eid2",
+                            "eid26",
                             "display",
-                            0,
+                            6000,
                             0,
                             "linear",
-                            "${Hans}",
-                            'block',
+                            "${game_over}",
+                            'none',
                             'block'
                         ],
                         [
-                            "eid4",
+                            "eid27",
                             "display",
-                            3000,
+                            7000,
                             0,
                             "linear",
-                            "${Hans}",
+                            "${game_over}",
                             'block',
                             'none'
                         ],
@@ -143,22 +143,22 @@
                             'none'
                         ],
                         [
-                            "eid26",
+                            "eid2",
                             "display",
-                            6000,
+                            0,
                             0,
                             "linear",
-                            "${game_over}",
-                            'none',
+                            "${Hans}",
+                            'block',
                             'block'
                         ],
                         [
-                            "eid27",
+                            "eid4",
                             "display",
-                            7000,
+                            3000,
                             0,
                             "linear",
-                            "${game_over}",
+                            "${Hans}",
                             'block',
                             'none'
                         ]
@@ -175,28 +175,28 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'Rectangle',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            rect: ['0px', '485px', '800px', '480px', 'auto', 'auto'],
-                            id: 'game-over',
                             type: 'image',
+                            id: 'game-over',
+                            rect: ['0px', '485px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/game-over.png', '0px', '0px']
                         },
                         {
-                            rect: ['800px', '0px', '800px', '480px', 'auto', 'auto'],
-                            id: 'sivev-wins',
                             type: 'image',
+                            id: 'sivev-wins',
+                            rect: ['800px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/sivev-wins.png', '0px', '0px']
                         },
                         {
-                            rect: ['-242px', '98px', '201px', '284px', 'auto', 'auto'],
-                            id: 'Sivev',
                             type: 'image',
+                            id: 'Sivev',
+                            rect: ['-242px', '98px', '201px', '284px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/Sivev.svg', '0px', '0px']
                         }
                     ],
@@ -234,14 +234,24 @@
                             '800px'
                         ],
                         [
-                            "eid10",
-                            "left",
+                            "eid13",
+                            "top",
                             0,
-                            0,
-                            "linear",
+                            500,
+                            "easeOutQuad",
+                            "${game-over}",
+                            '485px',
+                            '0px'
+                        ],
+                        [
+                            "eid15",
+                            "top",
+                            1000,
+                            500,
+                            "easeInQuad",
                             "${game-over}",
                             '0px',
-                            '0px'
+                            '-480px'
                         ],
                         [
                             "eid20",
@@ -264,24 +274,14 @@
                             '-800px'
                         ],
                         [
-                            "eid13",
-                            "top",
+                            "eid10",
+                            "left",
                             0,
-                            500,
-                            "easeOutQuad",
-                            "${game-over}",
-                            '485px',
-                            '0px'
-                        ],
-                        [
-                            "eid15",
-                            "top",
-                            1000,
-                            500,
-                            "easeInQuad",
+                            0,
+                            "linear",
                             "${game-over}",
                             '0px',
-                            '-480px'
+                            '0px'
                         ]
                     ]
                 }
@@ -308,6 +308,13 @@
                             text: 'Loading...<br><br>',
                             font: ['Lucida Console, Monaco, monospace', [12, 'px'], 'rgba(23,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
                             type: 'text'
+                        },
+                        {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            id: 'terminal_container',
+                            stroke: [0, 'rgba(0,0,0,1)', 'none'],
+                            type: 'rect',
+                            fill: ['rgba(192,192,192,0.00)']
                         }
                     ],
                     style: {
@@ -318,11 +325,53 @@
                     }
                 },
                 timeline: {
-                    duration: 1000,
+                    duration: 4000,
                     autoPlay: false,
                     labels: {
-                        "intro_endgame": 1000
+                        "intro_endgame": 1000,
+                        "game_endgame": 2000,
+                        "game_aftermath": 3000,
+                        "go_postgame": 4000
                     },
+                    data: [
+
+                    ]
+                }
+            },
+            "terminal": {
+                version: "5.0.1",
+                minimumCompatibleVersion: "5.0.0",
+                build: "5.0.1.386",
+                scaleToFit: "none",
+                centerStage: "none",
+                resizeInstances: false,
+                content: {
+                    dom: [
+                        {
+                            id: 'terminal',
+                            type: 'image',
+                            rect: ['0px', '0px', '363px', '237px', 'auto', 'auto'],
+                            fill: ['rgba(0,0,0,0)', 'images/terminal.png', '0px', '0px']
+                        },
+                        {
+                            rect: ['5px', '17px', '344px', '214px', 'auto', 'auto'],
+                            font: ['Lucida Console, Monaco, monospace', [14, 'px'], 'rgba(39,255,0,1.00)', '400', 'none solid rgb(0, 0, 0)', 'normal', 'break-word', 'normal'],
+                            id: 'contents',
+                            text: 'C:\\&gt;',
+                            align: 'left',
+                            type: 'text'
+                        }
+                    ],
+                    style: {
+                        '${symbolSelector}': {
+                            isStage: 'true',
+                            rect: [undefined, undefined, '363px', '237px']
+                        }
+                    }
+                },
+                timeline: {
+                    duration: 0,
+                    autoPlay: true,
                     data: [
 
                     ]
