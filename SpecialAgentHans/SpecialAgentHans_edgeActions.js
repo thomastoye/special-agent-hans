@@ -10,7 +10,7 @@
 var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonly used Edge classes
 
 // add globals here
-var score = 0;
+var score = 460;
 var stageRef;
 
    //Edge symbol: 'stage'
@@ -25,7 +25,7 @@ var stageRef;
       //Edge binding end
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-         sym.play("finale_game");
+         sym.stop("post_score");
          
 
       });
@@ -263,5 +263,77 @@ var stageRef;
    
    })("back_button");
    //Edge symbol end:'back_button'
+
+   //=========================================================
+   
+   //Edge symbol: 'post_score'
+   (function(symbolName) {   
+   
+      
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 82, function(sym, e) {
+         sym.$("score").text(score);
+         
+         // placeholder ophalen
+         var namePlaceholder = sym.$('name_cont');
+         
+         // textbox aanmaken
+         var nameTextbox = $("<input />").attr({
+         	'type': 'text',
+         	'placeholder': 'Name',
+         	'id': 'name'
+         }).css({
+         	'width': '100%',
+         	'height': '100%',
+         	'font-size': '100%'
+         });
+         
+         // textbox toevoegen
+         nameTextbox.appendTo(namePlaceholder);
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${post_score_button}", "click", function(sym, e) {
+         var name = sym.$("#name").val();
+         
+         $.post("http://student.howest.be/thomas.toye/specialagenthans/backend/api/highscore.php", {"name": name, "score": score});
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${back_button}", "click", function(sym, e) {
+         sym.getComposition().getStage().stop("menu");
+
+      });
+      //Edge binding end
+
+   })("post_score");
+   //Edge symbol end:'post_score'
+
+   //=========================================================
+   
+   //Edge symbol: 'menu'
+   (function(symbolName) {   
+   
+   })("menu");
+   //Edge symbol end:'menu'
+
+   //=========================================================
+   
+   //Edge symbol: 'minigame_1'
+   (function(symbolName) {   
+   
+   })("minigame_1");
+   //Edge symbol end:'minigame_1'
+
+   //=========================================================
+   
+   //Edge symbol: 'post_score_button'
+   (function(symbolName) {   
+   
+   })("post_score_button");
+   //Edge symbol end:'post_score_button'
 
 })(window.jQuery || AdobeEdge.$, AdobeEdge, "EDGE-7842125");
