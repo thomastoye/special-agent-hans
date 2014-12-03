@@ -112,42 +112,42 @@
                     },
                     data: [
                         [
-                            "eid26",
+                            "eid2",
                             "display",
-                            6000,
+                            0,
                             0,
                             "linear",
-                            "${game_over}",
-                            'none',
+                            "${Hans}",
+                            'block',
                             'block'
                         ],
                         [
-                            "eid27",
+                            "eid4",
                             "display",
-                            7000,
+                            3000,
                             0,
                             "linear",
-                            "${game_over}",
+                            "${Hans}",
                             'block',
                             'none'
                         ],
                         [
-                            "eid50",
+                            "eid64",
                             "display",
-                            5000,
+                            7000,
                             0,
                             "linear",
-                            "${highscores}",
+                            "${minigame_1}",
                             'none',
                             'block'
                         ],
                         [
-                            "eid51",
+                            "eid65",
                             "display",
-                            5500,
+                            8000,
                             0,
                             "linear",
-                            "${highscores}",
+                            "${minigame_1}",
                             'block',
                             'none'
                         ],
@@ -172,22 +172,22 @@
                             'none'
                         ],
                         [
-                            "eid64",
+                            "eid50",
                             "display",
-                            7000,
+                            5000,
                             0,
                             "linear",
-                            "${minigame_1}",
+                            "${highscores}",
                             'none',
                             'block'
                         ],
                         [
-                            "eid65",
+                            "eid51",
                             "display",
-                            8000,
+                            5500,
                             0,
                             "linear",
-                            "${minigame_1}",
+                            "${highscores}",
                             'block',
                             'none'
                         ],
@@ -252,22 +252,22 @@
                             'none'
                         ],
                         [
-                            "eid2",
+                            "eid26",
                             "display",
-                            0,
+                            6000,
                             0,
                             "linear",
-                            "${Hans}",
-                            'block',
+                            "${game_over}",
+                            'none',
                             'block'
                         ],
                         [
-                            "eid4",
+                            "eid27",
                             "display",
-                            3000,
+                            7000,
                             0,
                             "linear",
-                            "${Hans}",
+                            "${game_over}",
                             'block',
                             'none'
                         ]
@@ -284,28 +284,28 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            type: 'image',
-                            id: 'game-over',
                             rect: ['0px', '485px', '800px', '480px', 'auto', 'auto'],
+                            id: 'game-over',
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/game-over.png', '0px', '0px']
                         },
                         {
-                            type: 'image',
-                            id: 'sivev-wins',
                             rect: ['800px', '0px', '800px', '480px', 'auto', 'auto'],
+                            id: 'sivev-wins',
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/sivev-wins.png', '0px', '0px']
                         },
                         {
-                            type: 'image',
-                            id: 'Sivev',
                             rect: ['-242px', '98px', '201px', '284px', 'auto', 'auto'],
+                            id: 'Sivev',
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/Sivev.svg', '0px', '0px']
                         }
                     ],
@@ -343,24 +343,14 @@
                             '800px'
                         ],
                         [
-                            "eid13",
-                            "top",
+                            "eid10",
+                            "left",
                             0,
-                            500,
-                            "easeOutQuad",
-                            "${game-over}",
-                            '485px',
-                            '0px'
-                        ],
-                        [
-                            "eid15",
-                            "top",
-                            1000,
-                            500,
-                            "easeInQuad",
+                            0,
+                            "linear",
                             "${game-over}",
                             '0px',
-                            '-480px'
+                            '0px'
                         ],
                         [
                             "eid20",
@@ -383,14 +373,24 @@
                             '-800px'
                         ],
                         [
-                            "eid10",
-                            "left",
+                            "eid13",
+                            "top",
                             0,
-                            0,
-                            "linear",
+                            500,
+                            "easeOutQuad",
+                            "${game-over}",
+                            '485px',
+                            '0px'
+                        ],
+                        [
+                            "eid15",
+                            "top",
+                            1000,
+                            500,
+                            "easeInQuad",
                             "${game-over}",
                             '0px',
-                            '0px'
+                            '-480px'
                         ]
                     ]
                 }
@@ -494,16 +494,16 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'bg',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
+                            rect: ['128px', '55px', '543px', '355px', 'auto', 'auto'],
                             id: 'terminal',
                             type: 'image',
-                            rect: ['128px', '55px', '543px', '355px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/terminal.png', '0px', '0px']
                         },
                         {
@@ -524,8 +524,7 @@
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '800px', '480px']
+                            rect: [null, null, '800px', '480px']
                         }
                     }
                 },
@@ -549,9 +548,9 @@
                         {
                             rect: ['0px', '0px', '129px', '76px', 'auto', 'auto'],
                             borderRadius: ['10px', '10px', '10px', '10px'],
-                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            id: 'RoundRect2',
                             opacity: '0.17073170731707',
+                            id: 'RoundRect2',
+                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
                             type: 'rect',
                             fill: ['rgba(255,255,255,1)']
                         },
@@ -588,22 +587,22 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle4',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
+                            rect: ['0px', '480px', '800px', '480px', 'auto', 'auto'],
                             id: 'mission-complete',
                             type: 'image',
-                            rect: ['0px', '480px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/mission-complete.png', '0px', '0px']
                         },
                         {
+                            rect: ['800px', '334px', '204', '58', 'auto', 'auto'],
                             id: 'post_score_button',
                             symbolName: 'post_score_button',
-                            rect: ['800px', '334px', '204', '58', 'auto', 'auto'],
                             type: 'rect'
                         },
                         {
@@ -631,16 +630,15 @@
                             fill: ['rgba(39,255,0,1)']
                         },
                         {
+                            rect: ['0px', '-86px', null, null, 'auto', 'auto'],
                             id: 'back_button',
                             symbolName: 'back_button',
-                            rect: ['0px', '-86px', undefined, undefined, 'auto', 'auto'],
                             type: 'rect'
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '800px', '480px']
+                            rect: [null, null, '800px', '480px']
                         }
                     }
                 },
@@ -648,6 +646,26 @@
                     duration: 3000,
                     autoPlay: true,
                     data: [
+                        [
+                            "eid78",
+                            "left",
+                            0,
+                            0,
+                            "linear",
+                            "${post_score_button}",
+                            '800px',
+                            '800px'
+                        ],
+                        [
+                            "eid81",
+                            "left",
+                            2000,
+                            1000,
+                            "linear",
+                            "${post_score_button}",
+                            '800px',
+                            '520px'
+                        ],
                         [
                             "eid56",
                             "top",
@@ -729,26 +747,6 @@
                             '144px'
                         ],
                         [
-                            "eid78",
-                            "left",
-                            0,
-                            0,
-                            "linear",
-                            "${post_score_button}",
-                            '800px',
-                            '800px'
-                        ],
-                        [
-                            "eid81",
-                            "left",
-                            2000,
-                            1000,
-                            "linear",
-                            "${post_score_button}",
-                            '800px',
-                            '520px'
-                        ],
-                        [
                             "eid69",
                             "left",
                             2000,
@@ -771,17 +769,47 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,1.00)']
+                        },
+                        {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            id: 'menu_title_white',
+                            type: 'image',
+                            fill: ['rgba(0,0,0,0)', 'images/menu_title_white.png', '0px', '0px']
+                        },
+                        {
+                            type: 'image',
+                            id: 'menu_title',
+                            opacity: '1',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            fill: ['rgba(0,0,0,0)', 'images/menu_title.png', '0px', '0px']
+                        },
+                        {
+                            rect: ['34', '166', '176', '44', 'auto', 'auto'],
+                            id: 'play_button',
+                            symbolName: 'play_button',
+                            type: 'rect'
+                        },
+                        {
+                            rect: ['34', '231', '176', '44', 'auto', 'auto'],
+                            id: 'instructions_button',
+                            symbolName: 'instructions_button',
+                            type: 'rect'
+                        },
+                        {
+                            rect: ['34', '294', '176', '44', 'auto', 'auto'],
+                            id: 'highscores_button',
+                            symbolName: 'highscores_button',
+                            type: 'rect'
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '800px', '480px']
+                            rect: [null, null, '800px', '480px']
                         }
                     }
                 },
@@ -803,22 +831,34 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'bg',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1)']
+                        },
+                        {
+                            type: 'rect',
+                            id: 'grey_cable',
+                            symbolName: 'grey_cable',
+                            transform: [[], [], [], ['4.38866', '0.21118']],
+                            rect: ['289px', '249px', '247', '161', 'auto', 'auto']
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            rect: [null, null, '800px', '480px']
+                            isStage: 'true',
+                            rect: [undefined, undefined, '800px', '480px']
                         }
                     }
                 },
                 timeline: {
-                    duration: 0,
+                    duration: 2000,
                     autoPlay: false,
+                    labels: {
+                        "generate_cables": 1000,
+                        "start": 2000
+                    },
                     data: [
 
                     ]
@@ -852,14 +892,164 @@
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '204px', '58px']
+                            rect: [null, null, '204px', '58px']
                         }
                     }
                 },
                 timeline: {
                     duration: 0,
                     autoPlay: false,
+                    data: [
+
+                    ]
+                }
+            },
+            "play_button": {
+                version: "5.0.1",
+                minimumCompatibleVersion: "5.0.0",
+                build: "5.0.1.386",
+                scaleToFit: "none",
+                centerStage: "none",
+                resizeInstances: false,
+                content: {
+                    dom: [
+                        {
+                            rect: ['0px', '0px', '176px', '44px', 'auto', 'auto'],
+                            borderRadius: ['10px', '10px', '10px', '10px'],
+                            id: 'play_button',
+                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
+                            type: 'rect',
+                            fill: ['rgba(58,58,58,1.00)']
+                        },
+                        {
+                            rect: ['0px', '13px', '176px', '18px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            id: 'play_text',
+                            text: 'Play',
+                            align: 'center',
+                            type: 'text'
+                        }
+                    ],
+                    style: {
+                        '${symbolSelector}': {
+                            rect: [null, null, '176px', '44px']
+                        }
+                    }
+                },
+                timeline: {
+                    duration: 0,
+                    autoPlay: false,
+                    data: [
+
+                    ]
+                }
+            },
+            "instructions_button": {
+                version: "5.0.1",
+                minimumCompatibleVersion: "5.0.0",
+                build: "5.0.1.386",
+                scaleToFit: "none",
+                centerStage: "none",
+                resizeInstances: false,
+                content: {
+                    dom: [
+                        {
+                            rect: ['0px', '0px', '176px', '44px', 'auto', 'auto'],
+                            borderRadius: ['10px', '10px', '10px', '10px'],
+                            id: 'play_buttonCopy',
+                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
+                            type: 'rect',
+                            fill: ['rgba(58,58,58,1.00)']
+                        },
+                        {
+                            rect: ['0px', '13px', '176px', '18px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            id: 'play_textCopy',
+                            text: 'Instructions',
+                            align: 'center',
+                            type: 'text'
+                        }
+                    ],
+                    style: {
+                        '${symbolSelector}': {
+                            rect: [null, null, '176px', '44px']
+                        }
+                    }
+                },
+                timeline: {
+                    duration: 0,
+                    autoPlay: false,
+                    data: [
+
+                    ]
+                }
+            },
+            "highscores_button": {
+                version: "5.0.1",
+                minimumCompatibleVersion: "5.0.0",
+                build: "5.0.1.386",
+                scaleToFit: "none",
+                centerStage: "none",
+                resizeInstances: false,
+                content: {
+                    dom: [
+                        {
+                            rect: ['0px', '0px', '176px', '44px', 'auto', 'auto'],
+                            borderRadius: ['10px', '10px', '10px', '10px'],
+                            id: 'play_buttonCopy2',
+                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
+                            type: 'rect',
+                            fill: ['rgba(58,58,58,1.00)']
+                        },
+                        {
+                            rect: ['0px', '13px', '176px', '18px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            id: 'play_textCopy2',
+                            text: 'Highscores',
+                            align: 'center',
+                            type: 'text'
+                        }
+                    ],
+                    style: {
+                        '${symbolSelector}': {
+                            rect: [null, null, '176px', '44px']
+                        }
+                    }
+                },
+                timeline: {
+                    duration: 0,
+                    autoPlay: false,
+                    data: [
+
+                    ]
+                }
+            },
+            "grey_cable": {
+                version: "5.0.1",
+                minimumCompatibleVersion: "5.0.0",
+                build: "5.0.1.386",
+                scaleToFit: "none",
+                centerStage: "none",
+                resizeInstances: false,
+                content: {
+                    dom: [
+                        {
+                            id: 'cable_grey2',
+                            type: 'image',
+                            rect: ['0px', '0px', '247px', '161px', 'auto', 'auto'],
+                            fill: ['rgba(0,0,0,0)', 'images/cable_grey.svg', '0px', '0px']
+                        }
+                    ],
+                    style: {
+                        '${symbolSelector}': {
+                            isStage: 'true',
+                            rect: [undefined, undefined, '247px', '161px']
+                        }
+                    }
+                },
+                timeline: {
+                    duration: 0,
+                    autoPlay: true,
                     data: [
 
                     ]

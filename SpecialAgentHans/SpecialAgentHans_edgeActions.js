@@ -12,6 +12,8 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 // add globals here
 var score = 460;
 var stageRef;
+var tmpScore; // temporary global variable for use during minigames
+				  // due to scoping it would get lost otherwise
 
    //Edge symbol: 'stage'
    (function(symbolName) {
@@ -25,7 +27,7 @@ var stageRef;
       //Edge binding end
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-         sym.stop("post_score");
+         sym.stop("finale_game");
          
 
       });
@@ -317,6 +319,25 @@ var stageRef;
    //Edge symbol: 'menu'
    (function(symbolName) {   
    
+      Symbol.bindElementAction(compId, symbolName, "${play_button}", "click", function(sym, e) {
+         sym.getComposition().getStage().stop("end_game");
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${instructions_button}", "click", function(sym, e) {
+         sym.getComposition().getStage().stop("uitleg");
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${highscores_button}", "click", function(sym, e) {
+         sym.getComposition().getStage().stop("highscores");
+
+      });
+      //Edge binding end
+
    })("menu");
    //Edge symbol end:'menu'
 
@@ -325,6 +346,22 @@ var stageRef;
    //Edge symbol: 'minigame_1'
    (function(symbolName) {   
    
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1000, function(sym, e) {
+         // generate ~100 wires
+         for(var i = 0; i < 100; i++) {
+         	// create new wire symbol
+         	
+         	// add it to the stage
+         	
+         	// change size, rotation, x and y
+         	
+         	// add event listener
+         	
+         }
+
+      });
+      //Edge binding end
+
    })("minigame_1");
    //Edge symbol end:'minigame_1'
 
@@ -335,5 +372,37 @@ var stageRef;
    
    })("post_score_button");
    //Edge symbol end:'post_score_button'
+
+   //=========================================================
+   
+   //Edge symbol: 'play_button'
+   (function(symbolName) {   
+   
+   })("play_button");
+   //Edge symbol end:'play_button'
+
+   //=========================================================
+   
+   //Edge symbol: 'instructions_button'
+   (function(symbolName) {   
+   
+   })("instructions_button");
+   //Edge symbol end:'instructions_button'
+
+   //=========================================================
+   
+   //Edge symbol: 'highscores_button'
+   (function(symbolName) {   
+   
+   })("highscores_button");
+   //Edge symbol end:'highscores_button'
+
+   //=========================================================
+   
+   //Edge symbol: 'grey_cable'
+   (function(symbolName) {   
+   
+   })("grey_cable");
+   //Edge symbol end:'grey_cable'
 
 })(window.jQuery || AdobeEdge.$, AdobeEdge, "EDGE-7842125");
