@@ -27,7 +27,7 @@ var tmpScore; // temporary global variable for use during minigames
       //Edge binding end
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-         sym.stop("finale_game");
+         sym.stop("menu");
          
 
       });
@@ -42,6 +42,13 @@ var tmpScore; // temporary global variable for use during minigames
 
       Symbol.bindSymbolAction(compId, symbolName, "creationComplete", function(sym, e) {
          stageRef = sym;
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7000, function(sym, e) {
+         sym.stop();
+         sym.getSymbol("minigame_1").play();
 
       });
       //Edge binding end
@@ -320,7 +327,7 @@ var tmpScore; // temporary global variable for use during minigames
    (function(symbolName) {   
    
       Symbol.bindElementAction(compId, symbolName, "${play_button}", "click", function(sym, e) {
-         sym.getComposition().getStage().stop("end_game");
+         sym.getComposition().getStage().stop("minigame_1");
 
       });
       //Edge binding end
@@ -347,16 +354,39 @@ var tmpScore; // temporary global variable for use during minigames
    (function(symbolName) {   
    
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1000, function(sym, e) {
+         tmpScore = 0;
+         
+         function randomInc(a, b) {
+             return Math.floor(Math.random() * (b - a + 1)) + a;
+         }
+         
          // generate ~100 wires
          for(var i = 0; i < 100; i++) {
          	// create new wire symbol
-         	
-         	// add it to the stage
-         	
+         	var newWire = sym.createChildSymbol("grey_cable", sym.$("wire_container"));
+         	var el = newWire.getSymbolElement();
+         
          	// change size, rotation, x and y
-         	
+         
+         	var deg = randomInc(0, 180); // rotate randomly between 0 and 180 degrees
+         
+         	el.css({
+         		"position": "absolute",
+         		"top": randomInc(1,400) + "px",
+         		"left": randomInc(1,400) + "px",
+         		"transform": "rotate(" + deg + "deg) scale(100,0.2)",
+         		"-webkit-transform": "rotate(" + deg + "deg) scale(100,0.2)",
+         		"-ms-transform": "rotate(" + deg + "deg) scale(100,0.2)",
+         		"cursor": "crosshair"
+         	});
+         
          	// add event listener
-         	
+         
+         	el.click(function(ev) {
+         		tmpScore++;
+         		$(this).fadeOut(100).remove();
+         	});
+         
          }
 
       });
