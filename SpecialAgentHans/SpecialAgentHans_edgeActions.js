@@ -7,10 +7,22 @@
 *
 ***********************/
 (function($, Edge, compId){
+
+function getScore() {
+
+}
+
+function addToScore() {
+
+}
+
+function clearScore() {
+	
+}
+
 var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonly used Edge classes
 
 // add globals here
-var score = 460;
 var stageRef;
 var tmpScore; // temporary global variable for use during minigames
 				  // due to scoping it would get lost otherwise
@@ -48,6 +60,7 @@ function randomInc(a, b) {
 
       Symbol.bindSymbolAction(compId, symbolName, "creationComplete", function(sym, e) {
          stageRef = sym;
+         stageRef.setVariable("score", 0);
 
       });
       //Edge binding end
@@ -195,7 +208,7 @@ function randomInc(a, b) {
          $(window).on("keyup", ev);
          
          var timeout = setTimeout(function() {
-         	score += terminalsSpawned;
+         	stageRef.setVariable("score", stageRef.getVariable("score" + terminalsSpawned * 770));
          	$(window).off("keyup", ev);
          	clearTimeout(timeout);
          	sym.stop("game_aftermath");
@@ -223,7 +236,7 @@ function randomInc(a, b) {
          
          // Play the timeline at a label or specific time. For example:
          // sym.play(500); or sym.play("myLabel");
-         sym.getComposition().getStage().stop("highscores");
+         sym.getComposition().getStage().stop("post_score");
 
       });
       //Edge binding end
@@ -301,7 +314,7 @@ function randomInc(a, b) {
       
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 82, function(sym, e) {
-         sym.$("score").text(score);
+         sym.$("score").text(stageRef.getVariable("score"));
          
          // placeholder ophalen
          var namePlaceholder = sym.$('name_cont');
@@ -326,7 +339,10 @@ function randomInc(a, b) {
       Symbol.bindElementAction(compId, symbolName, "${post_score_button}", "click", function(sym, e) {
          var name = sym.$("#name").val();
          
-         $.post("http://student.howest.be/thomas.toye/specialagenthans/backend/api/highscore.php", {"name": name, "score": score});
+         $.post("http://student.howest.be/thomas.toye/specialagenthans/backend/api/highscore.php", {"name": name, "score": stageRef.getVariable("score")});
+         
+         
+         sym.getComposition().getStage().play("menu");
          
 
       });
@@ -347,17 +363,13 @@ function randomInc(a, b) {
    (function(symbolName) {   
    
       Symbol.bindElementAction(compId, symbolName, "${play_button}", "click", function(sym, e) {
-         sym.getComposition().getStage().stop("minigame_3");
+         stageRef.setVariable("score", 0);
+         sym.getComposition().getStage().stop("minigame_1");
 
       });
       //Edge binding end
 
-      Symbol.bindElementAction(compId, symbolName, "${instructions_button}", "click", function(sym, e) {
-         sym.getComposition().getStage().stop("uitleg");
-         
-
-      });
-      //Edge binding end
+      
 
       Symbol.bindElementAction(compId, symbolName, "${highscores_button}", "click", function(sym, e) {
          sym.getComposition().getStage().stop("highscores");
@@ -376,9 +388,7 @@ function randomInc(a, b) {
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1000, function(sym, e) {
          tmpScore = 0;
          
-         function randomInc(a, b) {
-             return Math.floor(Math.random() * (b - a + 1)) + a;
-         }
+         sym.stop();
          
          // generate ~100 wires
          for(var i = 0; i < 100; i++) {
@@ -408,6 +418,11 @@ function randomInc(a, b) {
          	});
          
          }
+         
+         
+         setTimeout(function() {
+         	sym.stop("wrapup");
+         }, 15000)
 
       });
       //Edge binding end
@@ -418,8 +433,34 @@ function randomInc(a, b) {
       });
       //Edge binding end
 
-      Symbol.bindElementAction(compId, symbolName, "${back_button}", "click", function(sym, e) {
+      Symbol.bindElementAction(compId, symbolName, "${continue}", "click", function(sym, e) {
          sym.play("generate_cables");
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 2000, function(sym, e) {
+         sym.play();
+         stageRef.setVariable("score", stageRef.getVariable("score") + tmpScore * 370);
+         sym.$("score").text("You cut " + tmpScore + " cables!");
+         
+         var syms = sym.getChildSymbols();
+         
+         syms.forEach(function(s) {
+         	if(s.name == "grey_cable") { s.deleteSymbol() }
+         });
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${next_game}", "click", function(sym, e) {
+         sym.getComposition().getStage().play("minigame_3");
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function(sym, e) {
+         sym.stop();
 
       });
       //Edge binding end
@@ -521,7 +562,7 @@ function randomInc(a, b) {
       //Edge binding end
 
       Symbol.bindElementAction(compId, symbolName, "${click_intercept}", "click", function(sym, e) {
-         sym.$("mok").animate({left: e.pageX - 53}, 250)
+         sym.$("mok").animate({left: e.pageX - 680}, 250)
 
       });
       //Edge binding end
@@ -581,6 +622,19 @@ function randomInc(a, b) {
          setTimeout(function() {
          	sym.play("wrapup");
          }, 47000);
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7000, function(sym, e) {
+      	stageRef.setVariable("score", stageRef("score") + tmpScore * 1000);
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${back_button3}", "click", function(sym, e) {
+         sym.getComposition().getStage().play("finale_game");
 
       });
       //Edge binding end

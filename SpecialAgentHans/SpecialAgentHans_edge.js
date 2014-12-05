@@ -82,7 +82,7 @@
                             symbolName: 'minigame_1',
                             display: 'none',
                             type: 'rect',
-                            rect: ['0', '0', '800', '480', 'auto', 'auto']
+                            rect: ['0', '0px', '800', '480', 'auto', 'auto']
                         },
                         {
                             id: 'minigame_2',
@@ -206,22 +206,22 @@
                             'none'
                         ],
                         [
-                            "eid140",
+                            "eid64",
                             "display",
-                            9000,
+                            7000,
                             0,
                             "linear",
-                            "${minigame_3}",
+                            "${minigame_1}",
                             'none',
                             'block'
                         ],
                         [
-                            "eid141",
+                            "eid65",
                             "display",
-                            10000,
+                            8000,
                             0,
                             "linear",
-                            "${minigame_3}",
+                            "${minigame_1}",
                             'block',
                             'none'
                         ],
@@ -246,26 +246,6 @@
                             'none'
                         ],
                         [
-                            "eid64",
-                            "display",
-                            7000,
-                            0,
-                            "linear",
-                            "${minigame_1}",
-                            'none',
-                            'block'
-                        ],
-                        [
-                            "eid65",
-                            "display",
-                            8000,
-                            0,
-                            "linear",
-                            "${minigame_1}",
-                            'block',
-                            'none'
-                        ],
-                        [
                             "eid60",
                             "display",
                             3000,
@@ -282,6 +262,26 @@
                             0,
                             "linear",
                             "${menu}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid140",
+                            "display",
+                            9000,
+                            0,
+                            "linear",
+                            "${minigame_3}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid141",
+                            "display",
+                            10000,
+                            0,
+                            "linear",
+                            "${minigame_3}",
                             'block',
                             'none'
                         ],
@@ -338,28 +338,28 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'Rectangle',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            rect: ['0px', '485px', '800px', '480px', 'auto', 'auto'],
-                            id: 'game-over',
                             type: 'image',
+                            id: 'game-over',
+                            rect: ['0px', '485px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/game-over.png', '0px', '0px']
                         },
                         {
-                            rect: ['800px', '0px', '800px', '480px', 'auto', 'auto'],
-                            id: 'sivev-wins',
                             type: 'image',
+                            id: 'sivev-wins',
+                            rect: ['800px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/sivev-wins.png', '0px', '0px']
                         },
                         {
-                            rect: ['-242px', '98px', '201px', '284px', 'auto', 'auto'],
-                            id: 'Sivev',
                             type: 'image',
+                            id: 'Sivev',
+                            rect: ['-242px', '98px', '201px', '284px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/Sivev.svg', '0px', '0px']
                         }
                     ],
@@ -397,14 +397,24 @@
                             '800px'
                         ],
                         [
-                            "eid10",
-                            "left",
+                            "eid13",
+                            "top",
                             0,
-                            0,
-                            "linear",
+                            500,
+                            "easeOutQuad",
+                            "${game-over}",
+                            '485px',
+                            '0px'
+                        ],
+                        [
+                            "eid15",
+                            "top",
+                            1000,
+                            500,
+                            "easeInQuad",
                             "${game-over}",
                             '0px',
-                            '0px'
+                            '-480px'
                         ],
                         [
                             "eid20",
@@ -427,24 +437,14 @@
                             '-800px'
                         ],
                         [
-                            "eid13",
-                            "top",
+                            "eid10",
+                            "left",
                             0,
-                            500,
-                            "easeOutQuad",
-                            "${game-over}",
-                            '485px',
-                            '0px'
-                        ],
-                        [
-                            "eid15",
-                            "top",
-                            1000,
-                            500,
-                            "easeInQuad",
+                            0,
+                            "linear",
                             "${game-over}",
                             '0px',
-                            '-480px'
+                            '0px'
                         ]
                     ]
                 }
@@ -459,24 +459,24 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'bg',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            font: ['Lucida Console, Monaco, monospace', [12, 'px'], 'rgba(23,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
+                            type: 'text',
                             id: 'scrolling_text',
                             text: 'Loading...<br><br>',
-                            type: 'text',
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto']
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            font: ['Lucida Console, Monaco, monospace', [12, 'px'], 'rgba(23,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal']
                         },
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'terminal_container',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(192,192,192,0.00)']
                         }
                     ],
@@ -548,16 +548,16 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'bg',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            rect: ['128px', '55px', '543px', '355px', 'auto', 'auto'],
-                            id: 'terminal',
                             type: 'image',
+                            id: 'terminal',
+                            rect: ['128px', '55px', '543px', '355px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/terminal.png', '0px', '0px']
                         },
                         {
@@ -602,9 +602,9 @@
                         {
                             rect: ['0px', '0px', '129px', '76px', 'auto', 'auto'],
                             borderRadius: ['10px', '10px', '10px', '10px'],
-                            opacity: '0.17073170731707',
-                            id: 'RoundRect2',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
+                            id: 'RoundRect2',
+                            opacity: '0.17073170731707',
                             type: 'rect',
                             fill: ['rgba(255,255,255,1)']
                         },
@@ -641,39 +641,39 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'Rectangle4',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            rect: ['0px', '480px', '800px', '480px', 'auto', 'auto'],
                             id: 'mission-complete',
                             type: 'image',
+                            rect: ['0px', '480px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/mission-complete.png', '0px', '0px']
                         },
                         {
-                            rect: ['800px', '334px', '204', '58', 'auto', 'auto'],
                             id: 'post_score_button',
                             symbolName: 'post_score_button',
+                            rect: ['800px', '334px', '204', '58', 'auto', 'auto'],
                             type: 'rect'
                         },
                         {
+                            rect: ['0px', '-107px', '800px', '107px', 'auto', 'auto'],
                             font: ['\'Lucida Console\', Monaco, monospace', [47, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
-                            type: 'text',
                             id: 'you_scored',
                             text: 'You scored',
                             align: 'center',
-                            rect: ['0px', '-107px', '800px', '107px', 'auto', 'auto']
+                            type: 'text'
                         },
                         {
+                            rect: ['298px', '144px', '800px', '107px', 'auto', 'auto'],
                             font: ['\'Lucida Console\', Monaco, monospace', [122, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
-                            type: 'text',
                             id: 'score',
                             text: '{{score}}',
                             align: 'center',
-                            rect: ['298px', '144px', '800px', '107px', 'auto', 'auto']
+                            type: 'text'
                         },
                         {
                             rect: ['-225px', '334px', '204px', '58px', 'auto', 'auto'],
@@ -684,15 +684,16 @@
                             fill: ['rgba(39,255,0,1)']
                         },
                         {
-                            rect: ['0px', '-86px', null, null, 'auto', 'auto'],
                             id: 'back_button',
                             symbolName: 'back_button',
+                            rect: ['0px', '-86px', null, null, 'auto', 'auto'],
                             type: 'rect'
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            rect: [null, null, '800px', '480px']
+                            isStage: 'true',
+                            rect: [undefined, undefined, '800px', '480px']
                         }
                     }
                 },
@@ -823,48 +824,66 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'menu_title_white',
                             type: 'image',
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/menu_title_white.png', '0px', '0px']
                         },
                         {
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'image',
                             id: 'menu_title',
                             opacity: '1',
-                            type: 'image',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/menu_title.png', '0px', '0px']
                         },
                         {
+                            rect: ['34', '261px', '176', '44', 'auto', 'auto'],
                             id: 'play_button',
                             symbolName: 'play_button',
-                            rect: ['34', '166', '176', '44', 'auto', 'auto'],
                             type: 'rect'
                         },
                         {
-                            id: 'instructions_button',
-                            symbolName: 'instructions_button',
-                            rect: ['34', '231', '176', '44', 'auto', 'auto'],
-                            type: 'rect'
-                        },
-                        {
+                            type: 'rect',
                             id: 'highscores_button',
                             symbolName: 'highscores_button',
-                            rect: ['34', '294', '176', '44', 'auto', 'auto'],
-                            type: 'rect'
+                            transform: [[], [], [], ['0.99996']],
+                            rect: ['34', '350px', '176', '44', 'auto', 'auto']
+                        },
+                        {
+                            rect: ['34px', '306px', '209px', '38px', 'auto', 'auto'],
+                            id: 'single_server3',
+                            type: 'image',
+                            fill: ['rgba(0,0,0,0)', 'images/single_server.svg', '0px', '0px']
+                        },
+                        {
+                            rect: ['34px', '396px', '209px', '38px', 'auto', 'auto'],
+                            id: 'single_server2',
+                            type: 'image',
+                            fill: ['rgba(0,0,0,0)', 'images/single_server.svg', '0px', '0px']
+                        },
+                        {
+                            rect: ['34px', '442px', '209px', '38px', 'auto', 'auto'],
+                            id: 'single_server4',
+                            type: 'image',
+                            fill: ['rgba(0,0,0,0)', 'images/single_server.svg', '0px', '0px']
+                        },
+                        {
+                            rect: ['34px', '216px', '209px', '38px', 'auto', 'auto'],
+                            id: 'single_server5',
+                            type: 'image',
+                            fill: ['rgba(0,0,0,0)', 'images/single_server.svg', '0px', '0px']
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '800px', '480px']
+                            rect: [null, null, '800px', '480px']
                         }
                     }
                 },
@@ -894,59 +913,155 @@
                         },
                         {
                             rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
+                            id: 'bg_red',
+                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
+                            display: 'none',
+                            fill: ['rgba(181,0,0,1.00)']
+                        },
+                        {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'wire_container',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
                             type: 'rect',
                             fill: ['rgba(192,192,192,0.00)']
                         },
                         {
+                            type: 'text',
                             rect: ['219px', '129px', '564px', '179px', 'auto', 'auto'],
-                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             align: 'left',
                             id: 'briefing',
                             text: 'Sabotage the SIVEV network infrastructure by cutting as much CAT-5 cables as possible.<br><br>You don\'t have much time!<br><br>Click on a cable to cut it.',
                             display: 'block',
-                            type: 'text'
+                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
                         },
                         {
+                            type: 'text',
                             rect: ['219px', '36px', '581px', '67px', 'auto', 'auto'],
-                            font: ['Lucida Console, Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
                             id: 'title',
                             text: 'MISSION #SABOTAGE',
                             display: 'block',
-                            type: 'text'
+                            font: ['Lucida Console, Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal']
                         },
                         {
-                            rect: ['-209px', '-123px', '596px', '842px', 'auto', 'auto'],
-                            transform: [[], ['270']],
-                            id: 'rj45',
                             type: 'image',
+                            transform: [[], ['270'], [0, 0, 0], [1, 1, 1]],
                             display: 'block',
+                            rect: ['-209px', '-123px', '596px', '842px', 'auto', 'auto'],
+                            id: 'rj45',
                             fill: ['rgba(0,0,0,0)', 'images/rj45.svg', '0px', '0px']
                         },
                         {
+                            transform: [[], ['180'], [0, 0, 0], [1, 1, 1]],
                             type: 'rect',
-                            transform: [[], ['180']],
                             display: 'block',
                             symbolName: 'back_button',
-                            rect: ['620px', '364px', undefined, undefined, 'auto', 'auto'],
-                            id: 'back_button'
+                            rect: ['620px', '364px', null, null, 'auto', 'auto'],
+                            id: 'continue'
+                        },
+                        {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
+                            opacity: '0',
+                            id: 'hide_cables',
+                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
+                            display: 'block',
+                            fill: ['rgba(0,0,0,1.00)']
+                        },
+                        {
+                            type: 'text',
+                            id: 'score',
+                            text: 'You scored well!',
+                            rect: ['0px', '101px', '800px', '185px', 'auto', 'auto'],
+                            display: 'none',
+                            align: 'center',
+                            font: ['\'Lucida Console\', Monaco, monospace', [65, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            opacity: '0'
+                        },
+                        {
+                            rect: ['645px', '384px', null, null, 'auto', 'auto'],
+                            type: 'rect',
+                            symbolName: 'back_button',
+                            display: 'none',
+                            opacity: '0',
+                            id: 'next_game',
+                            transform: [[], ['180'], [0, 0, 0], [1, 1, 1]]
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '800px', '480px']
+                            rect: [null, null, '800px', '480px']
                         }
                     }
                 },
                 timeline: {
-                    duration: 1000,
+                    duration: 4000,
                     autoPlay: false,
                     labels: {
-                        "generate_cables": 1000
+                        "generate_cables": 1000,
+                        "wrapup": 2000
                     },
                     data: [
+                        [
+                            "eid182",
+                            "display",
+                            2000,
+                            0,
+                            "linear",
+                            "${score}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid188",
+                            "opacity",
+                            2000,
+                            2000,
+                            "linear",
+                            "${next_game}",
+                            '0',
+                            '1'
+                        ],
+                        [
+                            "eid197",
+                            "display",
+                            0,
+                            0,
+                            "linear",
+                            "${hide_cables}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid187",
+                            "opacity",
+                            2000,
+                            2000,
+                            "linear",
+                            "${score}",
+                            '0',
+                            '1'
+                        ],
+                        [
+                            "eid98",
+                            "display",
+                            0,
+                            0,
+                            "linear",
+                            "${rj45}",
+                            'block',
+                            'block'
+                        ],
+                        [
+                            "eid99",
+                            "display",
+                            250,
+                            0,
+                            "linear",
+                            "${rj45}",
+                            'block',
+                            'none'
+                        ],
                         [
                             "eid96",
                             "display",
@@ -968,22 +1083,32 @@
                             'none'
                         ],
                         [
-                            "eid109",
+                            "eid178",
                             "display",
-                            0,
+                            2000,
                             0,
                             "linear",
-                            "${back_button}",
-                            'block',
+                            "${next_game}",
+                            'none',
                             'block'
                         ],
                         [
-                            "eid110",
+                            "eid171",
                             "display",
-                            250,
+                            1000,
                             0,
                             "linear",
-                            "${back_button}",
+                            "${bg_red}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid172",
+                            "display",
+                            2000,
+                            0,
+                            "linear",
+                            "${bg_red}",
                             'block',
                             'none'
                         ],
@@ -1018,22 +1143,22 @@
                             'none'
                         ],
                         [
-                            "eid98",
+                            "eid109",
                             "display",
                             0,
                             0,
                             "linear",
-                            "${rj45}",
+                            "${continue}",
                             'block',
                             'block'
                         ],
                         [
-                            "eid99",
+                            "eid110",
                             "display",
                             250,
                             0,
                             "linear",
-                            "${rj45}",
+                            "${continue}",
                             'block',
                             'none'
                         ]
@@ -1090,15 +1215,13 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '176px', '44px', 'auto', 'auto'],
-                            borderRadius: ['10px', '10px', '10px', '10px'],
-                            id: 'play_button',
-                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            type: 'rect',
-                            fill: ['rgba(58,58,58,1.00)']
+                            rect: ['0px', '0px', '210px', '38px', 'auto', 'auto'],
+                            id: 'server_front',
+                            type: 'image',
+                            fill: ['rgba(0,0,0,0)', 'images/server_front.svg', '0px', '0px']
                         },
                         {
-                            rect: ['0px', '13px', '176px', '18px', 'auto', 'auto'],
+                            rect: ['17px', '10px', '176px', '18px', 'auto', 'auto'],
                             font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             id: 'play_text',
                             text: 'Play',
@@ -1108,8 +1231,7 @@
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '176px', '44px']
+                            rect: [null, null, '176px', '44px']
                         }
                     }
                 },
@@ -1171,20 +1293,18 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '176px', '44px', 'auto', 'auto'],
-                            borderRadius: ['10px', '10px', '10px', '10px'],
-                            id: 'play_buttonCopy2',
-                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            type: 'rect',
-                            fill: ['rgba(58,58,58,1.00)']
+                            rect: ['0px', '1px', '209px', '38px', 'auto', 'auto'],
+                            id: 'server_front2',
+                            type: 'image',
+                            fill: ['rgba(0,0,0,0)', 'images/server_front.svg', '0px', '0px']
                         },
                         {
-                            type: 'text',
-                            rect: ['0px', '13px', '176px', '18px', 'auto', 'auto'],
+                            rect: ['17px', '11px', '176px', '18px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             id: 'play_textCopy2',
                             text: 'Highscores',
                             align: 'center',
-                            font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
+                            type: 'text'
                         }
                     ],
                     style: {
@@ -1248,33 +1368,33 @@
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
+                            type: 'text',
                             rect: ['219px', '129px', '564px', '179px', 'auto', 'auto'],
-                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             align: 'left',
                             id: 'briefing',
                             text: 'SIVEV agents have detected your intrusion, and they\'re not happy!<br><br>It\'s time for your secret weapon: your stack of Linux CDs.<br><br>Click on the screen to throw them.',
                             display: 'block',
-                            type: 'text'
+                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
                         },
                         {
+                            type: 'text',
                             rect: ['219px', '36px', '581px', '67px', 'auto', 'auto'],
-                            font: ['Lucida Console, Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
                             id: 'title',
                             text: '#DETECTED',
                             display: 'block',
-                            type: 'text'
+                            font: ['Lucida Console, Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal']
                         },
                         {
+                            transform: [[], ['180'], [0, 0, 0], [1, 1, 1]],
                             type: 'rect',
-                            transform: [[], ['180']],
                             display: 'block',
                             symbolName: 'back_button',
-                            rect: ['620px', '364px', undefined, undefined, 'auto', 'auto'],
+                            rect: ['620px', '364px', null, null, 'auto', 'auto'],
                             id: 'back_button'
                         },
                         {
-                            type: 'rect',
                             transform: [[], [], [], ['1.41279', '1.23256']],
+                            type: 'rect',
                             display: 'block',
                             symbolName: 'glow',
                             rect: ['12px', '86px', '172', '215', 'auto', 'auto'],
@@ -1290,8 +1410,7 @@
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '800px', '480px']
+                            rect: [null, null, '800px', '480px']
                         }
                     }
                 },
@@ -1323,16 +1442,6 @@
                             'none'
                         ],
                         [
-                            "eid134",
-                            "display",
-                            500,
-                            0,
-                            "linear",
-                            "${Sivev}",
-                            'block',
-                            'none'
-                        ],
-                        [
                             "eid131",
                             "display",
                             500,
@@ -1349,6 +1458,16 @@
                             0,
                             "linear",
                             "${back_button}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid134",
+                            "display",
+                            500,
+                            0,
+                            "linear",
+                            "${Sivev}",
                             'block',
                             'none'
                         ]
@@ -1375,8 +1494,7 @@
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '172px', '215px']
+                            rect: [null, null, '172px', '215px']
                         }
                     }
                 },
@@ -1445,7 +1563,7 @@
                             transform: [[], ['180']],
                             display: 'block',
                             symbolName: 'back_button',
-                            rect: ['620px', '364px', undefined, undefined, 'auto', 'auto'],
+                            rect: ['620px', '364px', null, null, 'auto', 'auto'],
                             id: 'startbutton'
                         },
                         {
@@ -1454,13 +1572,6 @@
                             type: 'image',
                             display: 'block',
                             fill: ['rgba(0,0,0,0)', 'images/spoon.svg', '0px', '0px']
-                        },
-                        {
-                            rect: ['625px', '320px', '175px', '226px', 'auto', 'auto'],
-                            id: 'mok',
-                            type: 'image',
-                            display: 'none',
-                            fill: ['rgba(0,0,0,0)', 'images/mok.svg', '0px', '0px']
                         },
                         {
                             rect: ['-102px', '98px', '271px', '54px', 'auto', 'auto'],
@@ -1480,12 +1591,42 @@
                             fill: ['rgba(0,0,0,0.00)']
                         },
                         {
+                            rect: ['625px', '343px', '175px', '226px', 'auto', 'auto'],
+                            id: 'mok',
+                            type: 'image',
+                            display: 'none',
+                            fill: ['rgba(0,0,0,0)', 'images/mok.svg', '0px', '0px']
+                        },
+                        {
                             rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             type: 'rect',
                             id: 'click_intercept',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
                             display: 'none',
                             fill: ['rgba(0,0,0,0.00)']
+                        },
+                        {
+                            rect: ['0px', '-195px', '800px', '137px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [65, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            id: 'Text9',
+                            text: 'Good work!',
+                            align: 'center',
+                            type: 'text'
+                        },
+                        {
+                            rect: ['836px', '251px', '544px', '137px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            id: 'Text10',
+                            text: 'You can now continue to the final stage. Be warned, it\'s dangerous out there!',
+                            align: 'left',
+                            type: 'text'
+                        },
+                        {
+                            type: 'rect',
+                            id: 'back_button3',
+                            symbolName: 'back_button',
+                            transform: [[], ['180']],
+                            rect: ['637px', '376px', null, null, 'auto', 'auto']
                         }
                     ],
                     style: {
@@ -1496,7 +1637,7 @@
                     }
                 },
                 timeline: {
-                    duration: 6000,
+                    duration: 7000,
                     autoPlay: false,
                     labels: {
                         "start": 1000,
@@ -1504,46 +1645,6 @@
                         "end": 6000
                     },
                     data: [
-                        [
-                            "eid137",
-                            "display",
-                            500,
-                            0,
-                            "linear",
-                            "${startbutton}",
-                            'block',
-                            'none'
-                        ],
-                        [
-                            "eid143",
-                            "display",
-                            1000,
-                            0,
-                            "linear",
-                            "${click_intercept}",
-                            'none',
-                            'block'
-                        ],
-                        [
-                            "eid147",
-                            "display",
-                            2000,
-                            0,
-                            "linear",
-                            "${click_intercept}",
-                            'block',
-                            'none'
-                        ],
-                        [
-                            "eid155",
-                            "font-size",
-                            2000,
-                            1000,
-                            "linear",
-                            "${score}",
-                            '36px',
-                            '166px'
-                        ],
                         [
                             "eid138",
                             "display",
@@ -1555,24 +1656,14 @@
                             'none'
                         ],
                         [
-                            "eid142",
-                            "display",
-                            500,
+                            "eid200",
+                            "top",
+                            1106,
                             0,
                             "linear",
-                            "${spoon}",
-                            'block',
-                            'none'
-                        ],
-                        [
-                            "eid154",
-                            "width",
-                            2000,
-                            1000,
-                            "linear",
-                            "${score}",
-                            '271px',
-                            '1004px'
+                            "${mok}",
+                            '343px',
+                            '343px'
                         ],
                         [
                             "eid144",
@@ -1595,24 +1686,24 @@
                             'none'
                         ],
                         [
-                            "eid139",
-                            "display",
-                            500,
-                            0,
-                            "linear",
-                            "${briefing}",
-                            'block',
-                            'none'
-                        ],
-                        [
-                            "eid153",
-                            "height",
+                            "eid155",
+                            "font-size",
                             2000,
                             1000,
                             "linear",
                             "${score}",
-                            '54px',
-                            '200px'
+                            '36px',
+                            '166px'
+                        ],
+                        [
+                            "eid191",
+                            "top",
+                            6000,
+                            1000,
+                            "linear",
+                            "${Text9}",
+                            '-195px',
+                            '44px'
                         ],
                         [
                             "eid151",
@@ -1635,24 +1726,24 @@
                             '501px'
                         ],
                         [
-                            "eid145",
-                            "display",
+                            "eid196",
+                            "top",
+                            6000,
                             1000,
-                            0,
                             "linear",
-                            "${royco_cont}",
-                            'none',
-                            'block'
+                            "${back_button3}",
+                            '388px',
+                            '376px'
                         ],
                         [
-                            "eid148",
-                            "display",
+                            "eid152",
+                            "left",
                             2000,
-                            0,
+                            1000,
                             "linear",
-                            "${royco_cont}",
-                            'block',
-                            'none'
+                            "${score}",
+                            '529px',
+                            '-102px'
                         ],
                         [
                             "eid146",
@@ -1675,14 +1766,114 @@
                             'block'
                         ],
                         [
-                            "eid152",
-                            "left",
+                            "eid154",
+                            "width",
                             2000,
                             1000,
                             "linear",
                             "${score}",
-                            '529px',
-                            '-102px'
+                            '271px',
+                            '1004px'
+                        ],
+                        [
+                            "eid142",
+                            "display",
+                            500,
+                            0,
+                            "linear",
+                            "${spoon}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid145",
+                            "display",
+                            1000,
+                            0,
+                            "linear",
+                            "${royco_cont}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid148",
+                            "display",
+                            2000,
+                            0,
+                            "linear",
+                            "${royco_cont}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid139",
+                            "display",
+                            500,
+                            0,
+                            "linear",
+                            "${briefing}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid190",
+                            "left",
+                            6000,
+                            1000,
+                            "linear",
+                            "${Text10}",
+                            '836px',
+                            '224px'
+                        ],
+                        [
+                            "eid143",
+                            "display",
+                            1000,
+                            0,
+                            "linear",
+                            "${click_intercept}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid147",
+                            "display",
+                            2000,
+                            0,
+                            "linear",
+                            "${click_intercept}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid137",
+                            "display",
+                            500,
+                            0,
+                            "linear",
+                            "${startbutton}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid153",
+                            "height",
+                            2000,
+                            1000,
+                            "linear",
+                            "${score}",
+                            '54px',
+                            '200px'
+                        ],
+                        [
+                            "eid195",
+                            "left",
+                            6000,
+                            1000,
+                            "linear",
+                            "${back_button3}",
+                            '837px',
+                            '637px'
                         ]
                     ]
                 }
@@ -1705,8 +1896,7 @@
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '600px', '600px']
+                            rect: [null, null, '600px', '600px']
                         }
                     }
                 },
