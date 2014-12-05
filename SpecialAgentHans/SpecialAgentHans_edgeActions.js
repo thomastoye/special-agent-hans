@@ -15,6 +15,12 @@ var stageRef;
 var tmpScore; // temporary global variable for use during minigames
 				  // due to scoping it would get lost otherwise
 
+
+// random between a and b (both inclusive, so [a, b])
+function randomInc(a, b) {
+	 return Math.floor(Math.random() * (b - a + 1)) + a;
+}
+
    //Edge symbol: 'stage'
    (function(symbolName) {
       
@@ -501,7 +507,7 @@ var tmpScore; // temporary global variable for use during minigames
    //Edge symbol: 'minigame_3'
    (function(symbolName) {   
    
-      Symbol.bindElementAction(compId, symbolName, "${back_buttonCopy}", "click", function(sym, e) {
+      Symbol.bindElementAction(compId, symbolName, "${startbutton}", "click", function(sym, e) {
          sym.play("start");
          
 
@@ -514,7 +520,86 @@ var tmpScore; // temporary global variable for use during minigames
       });
       //Edge binding end
 
+      Symbol.bindElementAction(compId, symbolName, "${click_intercept}", "click", function(sym, e) {
+         sym.$("mok").animate({left: e.pageX - 53}, 250)
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${royco_cont}", "click", function(sym, e) {
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1000, function(sym, e) {
+         tmpScore = 0;
+         
+         function updateScore() {
+         	sym.$("score").text(tmpScore * 1000);
+         }
+         
+         sym.stop();
+         updateScore();
+         
+         for(var i = 0; i < 300; i++) {
+         	// create new royco symbol
+         	var newRoyco = sym.createChildSymbol("royco", sym.$("royco_cont"));
+         	var el = newRoyco.getSymbolElement();
+         
+         	el.css({
+         		"position": "absolute",
+         		"top": "-370px",
+         		"left": randomInc(1,750) - 270 + "px",
+         		"transform": "scale(0.2,0.2)",
+         		"-webkit-transform": "scale(0.2,0.2)",
+         		"-ms-transform": "scale(0.2,0.2)"
+         	});
+         
+         	(function(element) {
+         		var t = setTimeout(function() {
+         			element.animate({
+         				"top": "150px"
+         			}, {
+         				duration: 1000,
+         				complete: function() {
+         					var thisCenter = $(this).offset().left + $(this).width() / 2;
+         					var mokCenter = sym.$("mok").offset().left + sym.$("mok").width() / 2 + 250;
+         					if(Math.abs(thisCenter - mokCenter) < 50) {
+         						$(this).fadeOut();
+         						tmpScore++;
+         					}
+         					updateScore();
+         					$(this).animate({"top": "+=200px"}, {complete: function(){ $(this).remove(); }})
+         
+         				} 
+         			});
+         		}, randomInc(0,45000));
+         	})(el);
+         }
+         
+         setTimeout(function() {
+         	sym.play("wrapup");
+         }, 47000);
+
+      });
+      //Edge binding end
+
    })("minigame_3");
    //Edge symbol end:'minigame_3'
+
+   //=========================================================
+   
+   //Edge symbol: 'royco'
+   (function(symbolName) {   
+   
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+         sym.$("royco").css({"background-image": "url(\"images/royco-" + randomInc(1,4) + ".png\")"});
+
+      });
+      //Edge binding end
+
+   })("royco");
+   //Edge symbol end:'royco'
 
 })(window.jQuery || AdobeEdge.$, AdobeEdge, "EDGE-7842125");

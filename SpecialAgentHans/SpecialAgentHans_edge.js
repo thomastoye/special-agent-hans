@@ -1427,15 +1427,15 @@
                             rect: ['219px', '129px', '564px', '179px', 'auto', 'auto'],
                             font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             align: 'left',
-                            id: 'briefingCopy',
-                            text: 'Being a special agent is hard. Hans is hungry.<br><br>Help him fill his cup with delicious Coyro soup, but avoid everything else.',
+                            id: 'briefing',
+                            text: 'Being a special agent is hard. Hans is hungry.<br><br>Help him to fill his cup with delicious Coyro soup!<br><br>Click on the stage to move the cup.',
                             display: 'block',
                             type: 'text'
                         },
                         {
                             rect: ['219px', '36px', '581px', '67px', 'auto', 'auto'],
                             font: ['Lucida Console, Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
-                            id: 'titleCopy',
+                            id: 'title',
                             text: '#HUNGRY',
                             display: 'block',
                             type: 'text'
@@ -1446,13 +1446,46 @@
                             display: 'block',
                             symbolName: 'back_button',
                             rect: ['620px', '364px', undefined, undefined, 'auto', 'auto'],
-                            id: 'back_buttonCopy'
+                            id: 'startbutton'
                         },
                         {
+                            rect: ['-62px', '70px', '353px', '498px', 'auto', 'auto'],
                             id: 'spoon',
                             type: 'image',
-                            rect: ['-62px', '70px', '353px', '498px', 'auto', 'auto'],
+                            display: 'block',
                             fill: ['rgba(0,0,0,0)', 'images/spoon.svg', '0px', '0px']
+                        },
+                        {
+                            rect: ['625px', '320px', '175px', '226px', 'auto', 'auto'],
+                            id: 'mok',
+                            type: 'image',
+                            display: 'none',
+                            fill: ['rgba(0,0,0,0)', 'images/mok.svg', '0px', '0px']
+                        },
+                        {
+                            rect: ['-102px', '98px', '271px', '54px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            align: 'center',
+                            id: 'score',
+                            text: '{{tmpscore}}',
+                            display: 'none',
+                            type: 'text'
+                        },
+                        {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
+                            id: 'royco_cont',
+                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
+                            display: 'none',
+                            fill: ['rgba(0,0,0,0.00)']
+                        },
+                        {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
+                            id: 'click_intercept',
+                            stroke: [0, 'rgb(0, 0, 0)', 'none'],
+                            display: 'none',
+                            fill: ['rgba(0,0,0,0.00)']
                         }
                     ],
                     style: {
@@ -1463,28 +1496,53 @@
                     }
                 },
                 timeline: {
-                    duration: 500,
+                    duration: 6000,
                     autoPlay: false,
+                    labels: {
+                        "start": 1000,
+                        "wrapup": 2000,
+                        "end": 6000
+                    },
                     data: [
-                        [
-                            "eid139",
-                            "display",
-                            500,
-                            0,
-                            "linear",
-                            "${briefingCopy}",
-                            'block',
-                            'none'
-                        ],
                         [
                             "eid137",
                             "display",
                             500,
                             0,
                             "linear",
-                            "${back_buttonCopy}",
+                            "${startbutton}",
                             'block',
                             'none'
+                        ],
+                        [
+                            "eid143",
+                            "display",
+                            1000,
+                            0,
+                            "linear",
+                            "${click_intercept}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid147",
+                            "display",
+                            2000,
+                            0,
+                            "linear",
+                            "${click_intercept}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid155",
+                            "font-size",
+                            2000,
+                            1000,
+                            "linear",
+                            "${score}",
+                            '36px',
+                            '166px'
                         ],
                         [
                             "eid138",
@@ -1492,10 +1550,171 @@
                             500,
                             0,
                             "linear",
-                            "${titleCopy}",
+                            "${title}",
                             'block',
                             'none'
+                        ],
+                        [
+                            "eid142",
+                            "display",
+                            500,
+                            0,
+                            "linear",
+                            "${spoon}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid154",
+                            "width",
+                            2000,
+                            1000,
+                            "linear",
+                            "${score}",
+                            '271px',
+                            '1004px'
+                        ],
+                        [
+                            "eid144",
+                            "display",
+                            1000,
+                            0,
+                            "linear",
+                            "${mok}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid150",
+                            "display",
+                            2000,
+                            0,
+                            "linear",
+                            "${mok}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid139",
+                            "display",
+                            500,
+                            0,
+                            "linear",
+                            "${briefing}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid153",
+                            "height",
+                            2000,
+                            1000,
+                            "linear",
+                            "${score}",
+                            '54px',
+                            '200px'
+                        ],
+                        [
+                            "eid151",
+                            "top",
+                            2000,
+                            1000,
+                            "linear",
+                            "${score}",
+                            '16px',
+                            '98px'
+                        ],
+                        [
+                            "eid156",
+                            "top",
+                            4000,
+                            1000,
+                            "linear",
+                            "${score}",
+                            '98px',
+                            '501px'
+                        ],
+                        [
+                            "eid145",
+                            "display",
+                            1000,
+                            0,
+                            "linear",
+                            "${royco_cont}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid148",
+                            "display",
+                            2000,
+                            0,
+                            "linear",
+                            "${royco_cont}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid146",
+                            "display",
+                            1000,
+                            0,
+                            "linear",
+                            "${score}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid149",
+                            "display",
+                            2000,
+                            0,
+                            "linear",
+                            "${score}",
+                            'block',
+                            'block'
+                        ],
+                        [
+                            "eid152",
+                            "left",
+                            2000,
+                            1000,
+                            "linear",
+                            "${score}",
+                            '529px',
+                            '-102px'
                         ]
+                    ]
+                }
+            },
+            "royco": {
+                version: "5.0.1",
+                minimumCompatibleVersion: "5.0.0",
+                build: "5.0.1.386",
+                scaleToFit: "none",
+                centerStage: "none",
+                resizeInstances: false,
+                content: {
+                    dom: [
+                        {
+                            id: 'royco',
+                            type: 'image',
+                            rect: ['0px', '0px', '600px', '600px', 'auto', 'auto'],
+                            fill: ['rgba(0,0,0,0)', 'images/royco-1.png', '0px', '0px']
+                        }
+                    ],
+                    style: {
+                        '${symbolSelector}': {
+                            isStage: 'true',
+                            rect: [undefined, undefined, '600px', '600px']
+                        }
+                    }
+                },
+                timeline: {
+                    duration: 0,
+                    autoPlay: true,
+                    data: [
+
                     ]
                 }
             }
