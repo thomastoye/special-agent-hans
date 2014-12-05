@@ -53,6 +53,20 @@ var tmpScore; // temporary global variable for use during minigames
       });
       //Edge binding end
 
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8000, function(sym, e) {
+         sym.stop();
+         sym.getSymbol("minigame_2").play();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9000, function(sym, e) {
+         sym.stop();
+         sym.getSymbol("minigame_3").play();
+
+      });
+      //Edge binding end
+
    })("stage");
    //Edge symbol end:'stage'
 
@@ -327,7 +341,7 @@ var tmpScore; // temporary global variable for use during minigames
    (function(symbolName) {   
    
       Symbol.bindElementAction(compId, symbolName, "${play_button}", "click", function(sym, e) {
-         sym.getComposition().getStage().stop("minigame_1");
+         sym.getComposition().getStage().stop("minigame_3");
 
       });
       //Edge binding end
@@ -392,6 +406,18 @@ var tmpScore; // temporary global variable for use during minigames
       });
       //Edge binding end
 
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+         sym.stop();
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${back_button}", "click", function(sym, e) {
+         sym.play("generate_cables");
+
+      });
+      //Edge binding end
+
    })("minigame_1");
    //Edge symbol end:'minigame_1'
 
@@ -434,5 +460,61 @@ var tmpScore; // temporary global variable for use during minigames
    
    })("grey_cable");
    //Edge symbol end:'grey_cable'
+
+   //=========================================================
+   
+   //Edge symbol: 'minigame_2'
+   (function(symbolName) {   
+   
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+         sym.stop();
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${back_button}", "click", function(sym, e) {
+         sym.play("start");
+         
+
+      });
+      //Edge binding end
+
+   })("minigame_2");
+   //Edge symbol end:'minigame_2'
+
+   //=========================================================
+   
+   //Edge symbol: 'glow'
+   (function(symbolName) {   
+   
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 2000, function(sym, e) {
+         sym.play(0);
+
+      });
+      //Edge binding end
+
+   })("glow");
+   //Edge symbol end:'glow'
+
+   //=========================================================
+   
+   //Edge symbol: 'minigame_3'
+   (function(symbolName) {   
+   
+      Symbol.bindElementAction(compId, symbolName, "${back_buttonCopy}", "click", function(sym, e) {
+         sym.play("start");
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+         sym.stop();
+
+      });
+      //Edge binding end
+
+   })("minigame_3");
+   //Edge symbol end:'minigame_3'
 
 })(window.jQuery || AdobeEdge.$, AdobeEdge, "EDGE-7842125");
