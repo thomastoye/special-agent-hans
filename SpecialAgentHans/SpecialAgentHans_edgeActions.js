@@ -11,17 +11,14 @@
 var _score = 0;
 
 function getScore() {
-	console.log("getting score: " + _score);
 	return _score;
 }
 
 function addToScore(toAdd) {
-	console.log("adding to score: " + toAdd + ", score was " + _score);
 	_score += toAdd;
 }
 
 function clearScore() {
-	console.log("clearing score");
 	_score = 0;
 }
 
@@ -50,7 +47,6 @@ function randomInc(a, b) {
       //Edge binding end
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-         sym.stop("menu");
          
 
       });

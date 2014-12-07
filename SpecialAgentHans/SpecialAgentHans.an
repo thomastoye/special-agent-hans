@@ -110,7 +110,7 @@
 	"expanded:images/menu_title_white.png":"nil",
 	"colorSwatches":"rgba(39,255,0,1.00)",
 	"nextElementColorIndex":"11",
-	"stage-Default Timeline_playhead_ms":"3000",
+	"stage-Default Timeline_playhead_ms":"0",
 	"game_over-Default Timeline_mark_ms":"-1",
 	"HTMLFileName":"SpecialAgentHans.html",
 	"game_over-Default Timeline_playhead_ms":"0",
