@@ -8,10 +8,10 @@
 ***********************/
 (function($, Edge, compId){
 
-var _score;
+var _score = 0;
 
 function getScore() {
-	console.log("getting score: " + score);
+	console.log("getting score: " + _score);
 	return _score;
 }
 
@@ -22,7 +22,7 @@ function addToScore(toAdd) {
 
 function clearScore() {
 	console.log("clearing score");
-	score = 0;
+	_score = 0;
 }
 
 var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonly used Edge classes
@@ -87,6 +87,21 @@ function randomInc(a, b) {
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9000, function(sym, e) {
          sym.stop();
          sym.getSymbol("minigame_3").play();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 5500, function(sym, e) {
+         sym.stop();
+         sym.getSymbol("post_score").play();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 3000, function(sym, e) {
+         sym.stop();
+         
+         sym.getSymbol("menu").play();
 
       });
       //Edge binding end
@@ -318,25 +333,27 @@ function randomInc(a, b) {
    
       
 
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 82, function(sym, e) {
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 73, function(sym, e) {
          sym.$("score").text(getScore());
          
          // placeholder ophalen
          var namePlaceholder = sym.$('name_cont');
          
-         // textbox aanmaken
-         var nameTextbox = $("<input />").attr({
-         	'type': 'text',
-         	'placeholder': 'Name',
-         	'id': 'name'
-         }).css({
-         	'width': '100%',
-         	'height': '100%',
-         	'font-size': '100%'
-         });
+         if($("#name").length == 0) {
+         	// textbox aanmaken
+         	var nameTextbox = $("<input />").attr({
+         		'type': 'text',
+         		'placeholder': 'Name',
+         		'id': 'name'
+         	}).css({
+         		'width': '100%',
+         		'height': '100%',
+         		'font-size': '100%'
+         	});
          
-         // textbox toevoegen
-         nameTextbox.appendTo(namePlaceholder);
+         	// textbox toevoegen
+         	nameTextbox.appendTo(namePlaceholder);
+         }
 
       });
       //Edge binding end
@@ -347,7 +364,7 @@ function randomInc(a, b) {
          $.post("http://student.howest.be/thomas.toye/specialagenthans/backend/api/highscore.php", {"name": name, "score": getScore()});
          
          
-         sym.getComposition().getStage().play("menu");
+         sym.getComposition().getStage().stop("menu");
          
 
       });
