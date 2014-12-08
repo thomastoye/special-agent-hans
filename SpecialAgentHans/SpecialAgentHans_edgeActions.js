@@ -109,6 +109,13 @@ function randomInc(a, b) {
       });
       //Edge binding end
 
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function(sym, e) {
+         sym.stop();
+         sym.getSymbol("uitleg").play();
+
+      });
+      //Edge binding end
+
    })("stage");
    //Edge symbol end:'stage'
 
@@ -389,7 +396,7 @@ function randomInc(a, b) {
    
       Symbol.bindElementAction(compId, symbolName, "${play_button}", "click", function(sym, e) {
          clearScore();
-         sym.getComposition().getStage().stop("minigame_1");
+         sym.getComposition().getStage().stop("uitleg");
 
       });
       //Edge binding end
@@ -680,5 +687,19 @@ function randomInc(a, b) {
 
    })("royco");
    //Edge symbol end:'royco'
+
+   //=========================================================
+   
+   //Edge symbol: 'uitleg'
+   (function(symbolName) {   
+   
+      Symbol.bindElementAction(compId, symbolName, "${back_button}", "click", function(sym, e) {
+         sym.getComposition().getStage().stop("minigame_1");
+
+      });
+      //Edge binding end
+
+   })("uitleg");
+   //Edge symbol end:'uitleg'
 
 })(window.jQuery || AdobeEdge.$, AdobeEdge, "EDGE-7842125");

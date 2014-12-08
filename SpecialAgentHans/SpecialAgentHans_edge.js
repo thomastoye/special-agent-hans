@@ -98,6 +98,13 @@
                             display: 'none',
                             type: 'rect',
                             rect: ['0', '0', '800', '480', 'auto', 'auto']
+                        },
+                        {
+                            id: 'uitleg',
+                            symbolName: 'uitleg',
+                            display: 'none',
+                            type: 'rect',
+                            rect: ['0', '0', '800', '480', 'auto', 'auto']
                         }
                     ],
                     style: {
@@ -153,6 +160,26 @@
                             0,
                             "linear",
                             "${post_score}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid207",
+                            "display",
+                            4000,
+                            0,
+                            "linear",
+                            "${uitleg}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid208",
+                            "display",
+                            5000,
+                            0,
+                            "linear",
+                            "${uitleg}",
                             'block',
                             'none'
                         ],
@@ -844,66 +871,67 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'Rectangle',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'menu_title_white',
                             type: 'image',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/menu_title_white.png', '0px', '0px']
                         },
                         {
-                            type: 'image',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'menu_title',
                             opacity: '1',
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/menu_title.png', '0px', '0px']
                         },
                         {
-                            rect: ['34', '261px', '176', '44', 'auto', 'auto'],
                             id: 'play_button',
                             symbolName: 'play_button',
+                            rect: ['34', '261px', '176', '44', 'auto', 'auto'],
                             type: 'rect'
                         },
                         {
-                            transform: [[], [], [], ['0.99996']],
+                            type: 'rect',
                             id: 'highscores_button',
                             symbolName: 'highscores_button',
-                            rect: ['34', '350px', '176', '44', 'auto', 'auto'],
-                            type: 'rect'
+                            transform: [[], [], [], ['0.99996']],
+                            rect: ['34', '350px', '176', '44', 'auto', 'auto']
                         },
                         {
-                            rect: ['34px', '306px', '209px', '38px', 'auto', 'auto'],
                             id: 'single_server3',
                             type: 'image',
+                            rect: ['34px', '306px', '209px', '38px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/single_server.svg', '0px', '0px']
                         },
                         {
-                            rect: ['34px', '396px', '209px', '38px', 'auto', 'auto'],
                             id: 'single_server2',
                             type: 'image',
+                            rect: ['34px', '396px', '209px', '38px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/single_server.svg', '0px', '0px']
                         },
                         {
-                            rect: ['34px', '442px', '209px', '38px', 'auto', 'auto'],
                             id: 'single_server4',
                             type: 'image',
+                            rect: ['34px', '442px', '209px', '38px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/single_server.svg', '0px', '0px']
                         },
                         {
-                            rect: ['34px', '216px', '209px', '38px', 'auto', 'auto'],
                             id: 'single_server5',
                             type: 'image',
+                            rect: ['34px', '216px', '209px', '38px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/single_server.svg', '0px', '0px']
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            rect: [null, null, '800px', '480px']
+                            isStage: 'true',
+                            rect: [undefined, undefined, '800px', '480px']
                         }
                     }
                 },
@@ -1924,6 +1952,134 @@
                     autoPlay: true,
                     data: [
 
+                    ]
+                }
+            },
+            "uitleg": {
+                version: "5.0.1",
+                minimumCompatibleVersion: "5.0.0",
+                build: "5.0.1.386",
+                scaleToFit: "none",
+                centerStage: "none",
+                resizeInstances: false,
+                content: {
+                    dom: [
+                        {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            id: 'uitleg',
+                            stroke: [0, 'rgba(0,0,0,1)', 'none'],
+                            type: 'rect',
+                            fill: ['rgba(0,0,0,1.00)']
+                        },
+                        {
+                            rect: ['400px', '57px', '376px', '303px', 'auto', 'auto'],
+                            id: 'Text',
+                            text: 'In this game, you play as Special Agent Hans, a network intrusion specialist from the secret agency WOHEST.<br><br>Your mission is to invade the network of the agency called SIVEV. Good luck, you\'ll need it!',
+                            font: ['Lucida Console, Monaco, monospace', [24, ''], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
+                            type: 'text'
+                        },
+                        {
+                            type: 'rect',
+                            id: 'glow',
+                            symbolName: 'glow',
+                            transform: [[], [], [], ['2.47287', '2.45736']],
+                            rect: ['84px', '133px', undefined, undefined, 'auto', 'auto']
+                        },
+                        {
+                            id: 'Sivev',
+                            type: 'image',
+                            rect: ['0px', '0px', '340px', '480px', 'auto', 'auto'],
+                            fill: ['rgba(0,0,0,0)', 'images/Sivev.svg', '0px', '0px']
+                        },
+                        {
+                            type: 'rect',
+                            id: 'back_button',
+                            symbolName: 'back_button',
+                            transform: [[], ['180']],
+                            rect: ['647px', '382px', undefined, undefined, 'auto', 'auto']
+                        }
+                    ],
+                    style: {
+                        '${symbolSelector}': {
+                            isStage: 'true',
+                            rect: [undefined, undefined, '800px', '480px']
+                        }
+                    }
+                },
+                timeline: {
+                    duration: 4000,
+                    autoPlay: false,
+                    data: [
+                        [
+                            "eid217",
+                            "scaleX",
+                            4000,
+                            0,
+                            "linear",
+                            "${glow}",
+                            '2.47287',
+                            '2.47287'
+                        ],
+                        [
+                            "eid223",
+                            "left",
+                            4000,
+                            0,
+                            "linear",
+                            "${back_button}",
+                            '647px',
+                            '647px'
+                        ],
+                        [
+                            "eid225",
+                            "rotateZ",
+                            4000,
+                            0,
+                            "linear",
+                            "${back_button}",
+                            '180deg',
+                            '180deg'
+                        ],
+                        [
+                            "eid224",
+                            "top",
+                            4000,
+                            0,
+                            "linear",
+                            "${back_button}",
+                            '382px',
+                            '382px'
+                        ],
+                        [
+                            "eid221",
+                            "left",
+                            4000,
+                            0,
+                            "linear",
+                            "${glow}",
+                            '84px',
+                            '84px'
+                        ],
+                        [
+                            "eid222",
+                            "top",
+                            4000,
+                            0,
+                            "linear",
+                            "${glow}",
+                            '133px',
+                            '133px'
+                        ],
+                        [
+                            "eid218",
+                            "scaleY",
+                            4000,
+                            0,
+                            "linear",
+                            "${glow}",
+                            '2.45736',
+                            '2.45736'
+                        ]
                     ]
                 }
             }
