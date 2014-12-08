@@ -104,7 +104,7 @@ function randomInc(a, b) {
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 5000, function(sym, e) {
          sym.stop();
-         sym.getSymbol("highscores").play();
+         sym.getSymbol("highscores").play(0);
 
       });
       //Edge binding end
@@ -302,7 +302,7 @@ function randomInc(a, b) {
    //Edge symbol: 'highscores'
    (function(symbolName) {   
    
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 82, function(sym, e) {
          sym.stop();
          var jsonUrl = "http://student.howest.be/thomas.toye/specialagenthans/backend/api/highscores.php";
          

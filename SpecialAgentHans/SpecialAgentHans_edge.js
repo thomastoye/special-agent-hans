@@ -164,26 +164,6 @@
                             'none'
                         ],
                         [
-                            "eid207",
-                            "display",
-                            4000,
-                            0,
-                            "linear",
-                            "${uitleg}",
-                            'none',
-                            'block'
-                        ],
-                        [
-                            "eid208",
-                            "display",
-                            5000,
-                            0,
-                            "linear",
-                            "${uitleg}",
-                            'block',
-                            'none'
-                        ],
-                        [
                             "eid28",
                             "display",
                             10000,
@@ -244,6 +224,56 @@
                             'none'
                         ],
                         [
+                            "eid207",
+                            "display",
+                            4000,
+                            0,
+                            "linear",
+                            "${uitleg}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid208",
+                            "display",
+                            5000,
+                            0,
+                            "linear",
+                            "${uitleg}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid201",
+                            "top",
+                            0,
+                            1000,
+                            "linear",
+                            "${Hans}",
+                            '331px',
+                            '5px'
+                        ],
+                        [
+                            "eid60",
+                            "display",
+                            3000,
+                            0,
+                            "linear",
+                            "${menu}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid61",
+                            "display",
+                            4000,
+                            0,
+                            "linear",
+                            "${menu}",
+                            'block',
+                            'none'
+                        ],
+                        [
                             "eid50",
                             "display",
                             5000,
@@ -262,16 +292,6 @@
                             "${highscores}",
                             'block',
                             'none'
-                        ],
-                        [
-                            "eid201",
-                            "top",
-                            0,
-                            1000,
-                            "linear",
-                            "${Hans}",
-                            '331px',
-                            '5px'
                         ],
                         [
                             "eid64",
@@ -310,26 +330,6 @@
                             0,
                             "linear",
                             "${minigame_3}",
-                            'block',
-                            'none'
-                        ],
-                        [
-                            "eid60",
-                            "display",
-                            3000,
-                            0,
-                            "linear",
-                            "${menu}",
-                            'none',
-                            'block'
-                        ],
-                        [
-                            "eid61",
-                            "display",
-                            4000,
-                            0,
-                            "linear",
-                            "${menu}",
                             'block',
                             'none'
                         ],
@@ -386,28 +386,28 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'Rectangle',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            rect: ['0px', '485px', '800px', '480px', 'auto', 'auto'],
-                            id: 'game-over',
                             type: 'image',
+                            id: 'game-over',
+                            rect: ['0px', '485px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/game-over.png', '0px', '0px']
                         },
                         {
-                            rect: ['800px', '0px', '800px', '480px', 'auto', 'auto'],
-                            id: 'sivev-wins',
                             type: 'image',
+                            id: 'sivev-wins',
+                            rect: ['800px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/sivev-wins.png', '0px', '0px']
                         },
                         {
-                            rect: ['-242px', '98px', '201px', '284px', 'auto', 'auto'],
-                            id: 'Sivev',
                             type: 'image',
+                            id: 'Sivev',
+                            rect: ['-242px', '98px', '201px', '284px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/Sivev.svg', '0px', '0px']
                         }
                     ],
@@ -445,14 +445,24 @@
                             '800px'
                         ],
                         [
-                            "eid10",
-                            "left",
+                            "eid13",
+                            "top",
                             0,
-                            0,
-                            "linear",
+                            500,
+                            "easeOutQuad",
+                            "${game-over}",
+                            '485px',
+                            '0px'
+                        ],
+                        [
+                            "eid15",
+                            "top",
+                            1000,
+                            500,
+                            "easeInQuad",
                             "${game-over}",
                             '0px',
-                            '0px'
+                            '-480px'
                         ],
                         [
                             "eid20",
@@ -475,24 +485,14 @@
                             '-800px'
                         ],
                         [
-                            "eid13",
-                            "top",
+                            "eid10",
+                            "left",
                             0,
-                            500,
-                            "easeOutQuad",
-                            "${game-over}",
-                            '485px',
-                            '0px'
-                        ],
-                        [
-                            "eid15",
-                            "top",
-                            1000,
-                            500,
-                            "easeInQuad",
+                            0,
+                            "linear",
                             "${game-over}",
                             '0px',
-                            '-480px'
+                            '0px'
                         ]
                     ]
                 }
@@ -507,24 +507,24 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'bg',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            type: 'text',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'scrolling_text',
                             text: 'Loading...<br><br>',
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
-                            font: ['Lucida Console, Monaco, monospace', [12, 'px'], 'rgba(23,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal']
+                            font: ['Lucida Console, Monaco, monospace', [12, 'px'], 'rgba(23,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
+                            type: 'text'
                         },
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'terminal_container',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(192,192,192,0.00)']
                         }
                     ],
@@ -564,12 +564,12 @@
                             fill: ['rgba(0,0,0,0)', 'images/terminal.png', '0px', '0px']
                         },
                         {
-                            font: ['Lucida Console, Monaco, monospace', [14, 'px'], 'rgba(39,255,0,1.00)', '400', 'none solid rgb(0, 0, 0)', 'normal', 'break-word', 'normal'],
                             type: 'text',
+                            rect: ['5px', '17px', '344px', '214px', 'auto', 'auto'],
                             id: 'contents',
                             text: 'C:\\&gt;',
                             align: 'left',
-                            rect: ['5px', '17px', '344px', '214px', 'auto', 'auto']
+                            font: ['Lucida Console, Monaco, monospace', [14, 'px'], 'rgba(39,255,0,1.00)', '400', 'none solid rgb(0, 0, 0)', 'normal', 'break-word', 'normal']
                         }
                     ],
                     style: {
@@ -596,42 +596,43 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'bg',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            rect: ['128px', '55px', '543px', '355px', 'auto', 'auto'],
                             id: 'terminal',
                             type: 'image',
+                            rect: ['128px', '55px', '543px', '355px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/terminal.png', '0px', '0px']
                         },
                         {
+                            rect: ['145px', '86px', '509px', '312px', 'auto', 'auto'],
                             font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
-                            type: 'text',
                             id: 'contents',
                             text: 'Loading highscores...',
                             align: 'left',
-                            rect: ['145px', '86px', '509px', '312px', 'auto', 'auto']
+                            type: 'text'
                         },
                         {
-                            transform: [[], [], [], ['0.89474', '0.89474']],
+                            type: 'rect',
                             id: 'back_button',
                             symbolName: 'back_button',
-                            rect: ['-7px', '-4px', '129', '76', 'auto', 'auto'],
-                            type: 'rect'
+                            transform: [[], [], [], ['0.89474', '0.89474']],
+                            rect: ['-7px', '-4px', '129', '76', 'auto', 'auto']
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            rect: [null, null, '800px', '480px']
+                            isStage: 'true',
+                            rect: [undefined, undefined, '800px', '480px']
                         }
                     }
                 },
                 timeline: {
-                    duration: 0,
+                    duration: 82.276856529062,
                     autoPlay: true,
                     data: [
 
@@ -650,19 +651,19 @@
                         {
                             rect: ['0px', '0px', '129px', '76px', 'auto', 'auto'],
                             borderRadius: ['10px', '10px', '10px', '10px'],
-                            opacity: '0.17073170731707',
-                            id: 'RoundRect2',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
+                            id: 'RoundRect2',
+                            opacity: '0.17073170731707',
                             type: 'rect',
                             fill: ['rgba(255,255,255,1)']
                         },
                         {
-                            font: ['\'Lucida Console\', Monaco, monospace', [58, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             type: 'text',
+                            rect: ['22px', '9px', '86px', '57px', 'auto', 'auto'],
                             id: 'Text4',
                             text: '&lt;=',
                             align: 'left',
-                            rect: ['22px', '9px', '86px', '57px', 'auto', 'auto']
+                            font: ['\'Lucida Console\', Monaco, monospace', [58, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
                         }
                     ],
                     style: {
@@ -689,39 +690,39 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle4',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            type: 'image',
-                            id: 'mission-complete',
                             rect: ['0px', '480px', '800px', '480px', 'auto', 'auto'],
+                            id: 'mission-complete',
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/mission-complete.png', '0px', '0px']
                         },
                         {
-                            type: 'rect',
+                            rect: ['800px', '334px', '204', '58', 'auto', 'auto'],
                             id: 'post_score_button',
                             symbolName: 'post_score_button',
-                            rect: ['800px', '334px', '204', '58', 'auto', 'auto']
+                            type: 'rect'
                         },
                         {
-                            type: 'text',
                             rect: ['0px', '-107px', '800px', '107px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [47, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             id: 'you_scored',
                             text: 'You scored',
                             align: 'center',
-                            font: ['\'Lucida Console\', Monaco, monospace', [47, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
+                            type: 'text'
                         },
                         {
-                            type: 'text',
                             rect: ['298px', '144px', '800px', '107px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [122, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             id: 'score',
                             text: '{{score}}',
                             align: 'center',
-                            font: ['\'Lucida Console\', Monaco, monospace', [122, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
+                            type: 'text'
                         },
                         {
                             rect: ['-225px', '334px', '204px', '58px', 'auto', 'auto'],
@@ -732,10 +733,10 @@
                             fill: ['rgba(39,255,0,1)']
                         },
                         {
-                            type: 'rect',
+                            rect: ['0px', '-86px', null, null, 'auto', 'auto'],
                             id: 'back_button',
                             symbolName: 'back_button',
-                            rect: ['0px', '-86px', null, null, 'auto', 'auto']
+                            type: 'rect'
                         }
                     ],
                     style: {
@@ -871,67 +872,66 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'menu_title_white',
                             type: 'image',
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/menu_title_white.png', '0px', '0px']
                         },
                         {
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'image',
                             id: 'menu_title',
                             opacity: '1',
-                            type: 'image',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/menu_title.png', '0px', '0px']
                         },
                         {
+                            rect: ['34', '261px', '176', '44', 'auto', 'auto'],
                             id: 'play_button',
                             symbolName: 'play_button',
-                            rect: ['34', '261px', '176', '44', 'auto', 'auto'],
                             type: 'rect'
                         },
                         {
-                            type: 'rect',
+                            transform: [[], [], [], ['0.99996']],
                             id: 'highscores_button',
                             symbolName: 'highscores_button',
-                            transform: [[], [], [], ['0.99996']],
-                            rect: ['34', '350px', '176', '44', 'auto', 'auto']
+                            rect: ['34', '350px', '176', '44', 'auto', 'auto'],
+                            type: 'rect'
                         },
                         {
+                            rect: ['34px', '306px', '209px', '38px', 'auto', 'auto'],
                             id: 'single_server3',
                             type: 'image',
-                            rect: ['34px', '306px', '209px', '38px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/single_server.svg', '0px', '0px']
                         },
                         {
+                            rect: ['34px', '396px', '209px', '38px', 'auto', 'auto'],
                             id: 'single_server2',
                             type: 'image',
-                            rect: ['34px', '396px', '209px', '38px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/single_server.svg', '0px', '0px']
                         },
                         {
+                            rect: ['34px', '442px', '209px', '38px', 'auto', 'auto'],
                             id: 'single_server4',
                             type: 'image',
-                            rect: ['34px', '442px', '209px', '38px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/single_server.svg', '0px', '0px']
                         },
                         {
+                            rect: ['34px', '216px', '209px', '38px', 'auto', 'auto'],
                             id: 'single_server5',
                             type: 'image',
-                            rect: ['34px', '216px', '209px', '38px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/single_server.svg', '0px', '0px']
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '800px', '480px']
+                            rect: [null, null, '800px', '480px']
                         }
                     }
                 },
@@ -953,87 +953,87 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'bg',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1)']
                         },
                         {
-                            type: 'rect',
                             rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'bg_red',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
                             display: 'none',
                             fill: ['rgba(181,0,0,1.00)']
                         },
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'wire_container',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(192,192,192,0.00)']
                         },
                         {
-                            type: 'text',
                             rect: ['219px', '129px', '564px', '179px', 'auto', 'auto'],
-                            display: 'block',
+                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            align: 'left',
                             id: 'briefing',
                             text: 'Sabotage the SIVEV network infrastructure by cutting as much CAT-5 cables as possible.<br><br>You don\'t have much time!<br><br>Click on a cable to cut it.',
-                            align: 'left',
-                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
+                            display: 'block',
+                            type: 'text'
                         },
                         {
-                            type: 'text',
                             rect: ['219px', '36px', '581px', '67px', 'auto', 'auto'],
+                            font: ['Lucida Console, Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
                             id: 'title',
                             text: 'MISSION #SABOTAGE',
                             display: 'block',
-                            font: ['Lucida Console, Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal']
+                            type: 'text'
                         },
                         {
-                            transform: [[], ['270'], [0, 0, 0], [1, 1, 1]],
                             type: 'image',
-                            id: 'rj45',
+                            transform: [[], ['270'], [0, 0, 0], [1, 1, 1]],
                             display: 'block',
                             rect: ['-209px', '-123px', '596px', '842px', 'auto', 'auto'],
+                            id: 'rj45',
                             fill: ['rgba(0,0,0,0)', 'images/rj45.svg', '0px', '0px']
                         },
                         {
                             transform: [[], ['180'], [0, 0, 0], [1, 1, 1]],
-                            id: 'continue',
+                            type: 'rect',
                             display: 'block',
                             symbolName: 'back_button',
                             rect: ['620px', '364px', null, null, 'auto', 'auto'],
-                            type: 'rect'
+                            id: 'continue'
                         },
                         {
-                            type: 'rect',
                             rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
-                            display: 'block',
+                            type: 'rect',
+                            opacity: '0',
                             id: 'hide_cables',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            opacity: '0',
+                            display: 'block',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
                             type: 'text',
                             id: 'score',
                             text: 'You scored well!',
-                            font: ['\'Lucida Console\', Monaco, monospace', [65, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
-                            display: 'none',
-                            opacity: '0',
                             rect: ['0px', '101px', '800px', '185px', 'auto', 'auto'],
-                            align: 'center'
+                            display: 'none',
+                            align: 'center',
+                            font: ['\'Lucida Console\', Monaco, monospace', [65, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            opacity: '0'
                         },
                         {
-                            rect: ['645px', '384px', null, null, 'auto', 'auto'],
                             type: 'rect',
-                            id: 'next_game',
+                            transform: [[], ['180'], [0, 0, 0], [1, 1, 1]],
+                            symbolName: 'back_button',
                             display: 'none',
                             opacity: '0',
-                            symbolName: 'back_button',
-                            transform: [[], ['180'], [0, 0, 0], [1, 1, 1]]
+                            id: 'next_game',
+                            rect: ['645px', '384px', null, null, 'auto', 'auto']
                         }
                     ],
                     style: {
@@ -1091,22 +1091,22 @@
                             '1'
                         ],
                         [
-                            "eid109",
+                            "eid98",
                             "display",
                             0,
                             0,
                             "linear",
-                            "${continue}",
+                            "${rj45}",
                             'block',
                             'block'
                         ],
                         [
-                            "eid110",
+                            "eid99",
                             "display",
                             250,
                             0,
                             "linear",
-                            "${continue}",
+                            "${rj45}",
                             'block',
                             'none'
                         ],
@@ -1191,22 +1191,22 @@
                             'none'
                         ],
                         [
-                            "eid98",
+                            "eid109",
                             "display",
                             0,
                             0,
                             "linear",
-                            "${rj45}",
+                            "${continue}",
                             'block',
                             'block'
                         ],
                         [
-                            "eid99",
+                            "eid110",
                             "display",
                             250,
                             0,
                             "linear",
-                            "${rj45}",
+                            "${continue}",
                             'block',
                             'none'
                         ]
@@ -1231,12 +1231,12 @@
                             fill: ['rgba(39,255,0,1)']
                         },
                         {
-                            type: 'text',
                             rect: ['0px', '18px', '204px', '22px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(0,0,0,1.00)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             id: 'Text3',
                             text: 'Submit score',
                             align: 'center',
-                            font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(0,0,0,1.00)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
+                            type: 'text'
                         }
                     ],
                     style: {
@@ -1263,18 +1263,18 @@
                 content: {
                     dom: [
                         {
-                            type: 'image',
-                            id: 'server_front',
                             rect: ['0px', '0px', '210px', '38px', 'auto', 'auto'],
+                            id: 'server_front',
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/server_front.svg', '0px', '0px']
                         },
                         {
-                            rect: ['17px', '10px', '176px', '18px', 'auto', 'auto'],
                             font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            type: 'text',
                             id: 'play_text',
                             text: 'Play',
                             align: 'center',
-                            type: 'text'
+                            rect: ['17px', '10px', '176px', '18px', 'auto', 'auto']
                         }
                     ],
                     style: {
@@ -1309,12 +1309,12 @@
                             fill: ['rgba(58,58,58,1.00)']
                         },
                         {
-                            type: 'text',
                             rect: ['0px', '13px', '176px', '18px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             id: 'play_textCopy',
                             text: 'Instructions',
                             align: 'center',
-                            font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
+                            type: 'text'
                         }
                     ],
                     style: {
@@ -1341,18 +1341,18 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '1px', '209px', '38px', 'auto', 'auto'],
-                            id: 'server_front2',
                             type: 'image',
+                            id: 'server_front2',
+                            rect: ['0px', '1px', '209px', '38px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/server_front.svg', '0px', '0px']
                         },
                         {
-                            font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             type: 'text',
+                            rect: ['17px', '11px', '176px', '18px', 'auto', 'auto'],
                             id: 'play_textCopy2',
                             text: 'Highscores',
                             align: 'center',
-                            rect: ['17px', '11px', '176px', '18px', 'auto', 'auto']
+                            font: ['\'Lucida Console\', Monaco, monospace', [22, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
                         }
                     ],
                     style: {
@@ -1409,50 +1409,50 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'bg',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            type: 'text',
                             rect: ['219px', '129px', '564px', '179px', 'auto', 'auto'],
-                            display: 'block',
+                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            align: 'left',
                             id: 'briefing',
                             text: 'SIVEV agents have detected your intrusion, and they\'re not happy!<br><br>It\'s time for your secret weapon: your stack of Linux CDs.<br><br>Click on the screen to throw them.',
-                            align: 'left',
-                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
+                            display: 'block',
+                            type: 'text'
                         },
                         {
-                            type: 'text',
                             rect: ['219px', '36px', '581px', '67px', 'auto', 'auto'],
+                            font: ['Lucida Console, Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
                             id: 'title',
                             text: '#DETECTED',
                             display: 'block',
-                            font: ['Lucida Console, Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal']
+                            type: 'text'
                         },
                         {
                             transform: [[], ['180'], [0, 0, 0], [1, 1, 1]],
-                            id: 'back_button',
+                            type: 'rect',
                             display: 'block',
                             symbolName: 'back_button',
                             rect: ['620px', '364px', null, null, 'auto', 'auto'],
-                            type: 'rect'
+                            id: 'back_button'
                         },
                         {
                             transform: [[], [], [], ['1.41279', '1.23256']],
-                            id: 'glow',
+                            type: 'rect',
                             display: 'block',
                             symbolName: 'glow',
                             rect: ['12px', '86px', '172', '215', 'auto', 'auto'],
-                            type: 'rect'
+                            id: 'glow'
                         },
                         {
-                            type: 'image',
-                            display: 'block',
                             rect: ['29px', '103px', '129px', '182px', 'auto', 'auto'],
                             id: 'Sivev',
+                            type: 'image',
+                            display: 'block',
                             fill: ['rgba(0,0,0,0)', 'images/Sivev.svg', '0px', '0px']
                         }
                     ],
@@ -1490,12 +1490,12 @@
                             'none'
                         ],
                         [
-                            "eid134",
+                            "eid131",
                             "display",
                             500,
                             0,
                             "linear",
-                            "${Sivev}",
+                            "${title}",
                             'block',
                             'none'
                         ],
@@ -1510,12 +1510,12 @@
                             'none'
                         ],
                         [
-                            "eid131",
+                            "eid134",
                             "display",
                             500,
                             0,
                             "linear",
-                            "${title}",
+                            "${Sivev}",
                             'block',
                             'none'
                         ]
@@ -1583,98 +1583,98 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'bg',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            rect: ['219px', '129px', '564px', '179px', 'auto', 'auto'],
                             font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
-                            display: 'block',
+                            type: 'text',
+                            align: 'left',
                             id: 'briefing',
                             text: 'Being a special agent is hard. Hans is hungry.<br><br>Help him to fill his cup with delicious Coyro soup!<br><br>Click on the stage to move the cup.',
-                            align: 'left',
-                            type: 'text'
+                            display: 'block',
+                            rect: ['219px', '129px', '564px', '179px', 'auto', 'auto']
                         },
                         {
-                            rect: ['219px', '36px', '581px', '67px', 'auto', 'auto'],
                             font: ['Lucida Console, Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
+                            type: 'text',
                             id: 'title',
                             text: '#HUNGRY',
                             display: 'block',
-                            type: 'text'
+                            rect: ['219px', '36px', '581px', '67px', 'auto', 'auto']
                         },
                         {
                             type: 'rect',
-                            id: 'startbutton',
+                            transform: [[], ['180'], [0, 0, 0], [1, 1, 1]],
                             display: 'block',
                             symbolName: 'back_button',
                             rect: ['620px', '364px', null, null, 'auto', 'auto'],
-                            transform: [[], ['180'], [0, 0, 0], [1, 1, 1]]
+                            id: 'startbutton'
                         },
                         {
-                            type: 'image',
-                            display: 'block',
                             rect: ['-62px', '70px', '353px', '498px', 'auto', 'auto'],
                             id: 'spoon',
+                            type: 'image',
+                            display: 'block',
                             fill: ['rgba(0,0,0,0)', 'images/spoon.svg', '0px', '0px']
                         },
                         {
-                            rect: ['-102px', '98px', '271px', '54px', 'auto', 'auto'],
                             font: ['\'Lucida Console\', Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
-                            display: 'none',
+                            type: 'text',
+                            align: 'center',
                             id: 'score',
                             text: '{{tmpscore}}',
-                            align: 'center',
-                            type: 'text'
+                            display: 'none',
+                            rect: ['-102px', '98px', '271px', '54px', 'auto', 'auto']
                         },
                         {
-                            type: 'rect',
                             rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'royco_cont',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
                             display: 'none',
                             fill: ['rgba(0,0,0,0.00)']
                         },
                         {
-                            type: 'image',
-                            display: 'none',
                             rect: ['625px', '343px', '175px', '226px', 'auto', 'auto'],
                             id: 'mok',
+                            type: 'image',
+                            display: 'none',
                             fill: ['rgba(0,0,0,0)', 'images/mok.svg', '0px', '0px']
                         },
                         {
-                            type: 'rect',
                             rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'click_intercept',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
                             display: 'none',
                             fill: ['rgba(0,0,0,0.00)']
                         },
                         {
-                            rect: ['0px', '-195px', '800px', '137px', 'auto', 'auto'],
                             font: ['\'Lucida Console\', Monaco, monospace', [65, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            type: 'text',
                             id: 'Text9',
                             text: 'Good work!',
                             align: 'center',
-                            type: 'text'
+                            rect: ['0px', '-195px', '800px', '137px', 'auto', 'auto']
                         },
                         {
-                            rect: ['836px', '251px', '544px', '137px', 'auto', 'auto'],
                             font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            type: 'text',
                             id: 'Text10',
                             text: 'You can now continue to the final stage. Be warned, it\'s dangerous out there!',
                             align: 'left',
-                            type: 'text'
+                            rect: ['836px', '251px', '544px', '137px', 'auto', 'auto']
                         },
                         {
-                            type: 'rect',
+                            transform: [[], ['180'], [0, 0, 0], [1, 1, 1]],
                             id: 'back_button3',
                             symbolName: 'back_button',
-                            transform: [[], ['180'], [0, 0, 0], [1, 1, 1]],
-                            rect: ['637px', '376px', null, null, 'auto', 'auto']
+                            rect: ['637px', '376px', null, null, 'auto', 'auto'],
+                            type: 'rect'
                         }
                     ],
                     style: {
@@ -1833,14 +1833,24 @@
                             'none'
                         ],
                         [
-                            "eid195",
-                            "left",
-                            6000,
+                            "eid145",
+                            "display",
                             1000,
+                            0,
                             "linear",
-                            "${back_button3}",
-                            '837px',
-                            '637px'
+                            "${royco_cont}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid148",
+                            "display",
+                            2000,
+                            0,
+                            "linear",
+                            "${royco_cont}",
+                            'block',
+                            'none'
                         ],
                         [
                             "eid139",
@@ -1853,24 +1863,14 @@
                             'none'
                         ],
                         [
-                            "eid153",
-                            "height",
-                            2000,
+                            "eid190",
+                            "left",
+                            6000,
                             1000,
                             "linear",
-                            "${score}",
-                            '54px',
-                            '200px'
-                        ],
-                        [
-                            "eid137",
-                            "display",
-                            500,
-                            0,
-                            "linear",
-                            "${startbutton}",
-                            'block',
-                            'none'
+                            "${Text10}",
+                            '836px',
+                            '224px'
                         ],
                         [
                             "eid143",
@@ -1893,34 +1893,34 @@
                             'none'
                         ],
                         [
-                            "eid190",
+                            "eid137",
+                            "display",
+                            500,
+                            0,
+                            "linear",
+                            "${startbutton}",
+                            'block',
+                            'none'
+                        ],
+                        [
+                            "eid153",
+                            "height",
+                            2000,
+                            1000,
+                            "linear",
+                            "${score}",
+                            '54px',
+                            '200px'
+                        ],
+                        [
+                            "eid195",
                             "left",
                             6000,
                             1000,
                             "linear",
-                            "${Text10}",
-                            '836px',
-                            '224px'
-                        ],
-                        [
-                            "eid145",
-                            "display",
-                            1000,
-                            0,
-                            "linear",
-                            "${royco_cont}",
-                            'none',
-                            'block'
-                        ],
-                        [
-                            "eid148",
-                            "display",
-                            2000,
-                            0,
-                            "linear",
-                            "${royco_cont}",
-                            'block',
-                            'none'
+                            "${back_button3}",
+                            '837px',
+                            '637px'
                         ]
                     ]
                 }
@@ -1965,44 +1965,43 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'uitleg',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            rect: ['400px', '57px', '376px', '303px', 'auto', 'auto'],
+                            font: ['Lucida Console, Monaco, monospace', [24, ''], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
                             id: 'Text',
                             text: 'In this game, you play as Special Agent Hans, a network intrusion specialist from the secret agency WOHEST.<br><br>Your mission is to invade the network of the agency called SIVEV. Good luck, you\'ll need it!',
-                            font: ['Lucida Console, Monaco, monospace', [24, ''], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
-                            type: 'text'
+                            type: 'text',
+                            rect: ['400px', '57px', '376px', '303px', 'auto', 'auto']
                         },
                         {
-                            type: 'rect',
+                            transform: [[], [], [], ['2.47287', '2.45736']],
                             id: 'glow',
                             symbolName: 'glow',
-                            transform: [[], [], [], ['2.47287', '2.45736']],
-                            rect: ['84px', '133px', undefined, undefined, 'auto', 'auto']
+                            rect: ['84px', '133px', null, null, 'auto', 'auto'],
+                            type: 'rect'
                         },
                         {
+                            rect: ['0px', '0px', '340px', '480px', 'auto', 'auto'],
                             id: 'Sivev',
                             type: 'image',
-                            rect: ['0px', '0px', '340px', '480px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/Sivev.svg', '0px', '0px']
                         },
                         {
-                            type: 'rect',
+                            transform: [[], ['180'], [0, 0, 0], [1, 1, 1]],
                             id: 'back_button',
                             symbolName: 'back_button',
-                            transform: [[], ['180']],
-                            rect: ['647px', '382px', undefined, undefined, 'auto', 'auto']
+                            rect: ['647px', '382px', null, null, 'auto', 'auto'],
+                            type: 'rect'
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '800px', '480px']
+                            rect: [null, null, '800px', '480px']
                         }
                     }
                 },
@@ -2031,6 +2030,36 @@
                             '647px'
                         ],
                         [
+                            "eid218",
+                            "scaleY",
+                            4000,
+                            0,
+                            "linear",
+                            "${glow}",
+                            '2.45736',
+                            '2.45736'
+                        ],
+                        [
+                            "eid222",
+                            "top",
+                            4000,
+                            0,
+                            "linear",
+                            "${glow}",
+                            '133px',
+                            '133px'
+                        ],
+                        [
+                            "eid221",
+                            "left",
+                            4000,
+                            0,
+                            "linear",
+                            "${glow}",
+                            '84px',
+                            '84px'
+                        ],
+                        [
                             "eid225",
                             "rotateZ",
                             4000,
@@ -2049,36 +2078,6 @@
                             "${back_button}",
                             '382px',
                             '382px'
-                        ],
-                        [
-                            "eid221",
-                            "left",
-                            4000,
-                            0,
-                            "linear",
-                            "${glow}",
-                            '84px',
-                            '84px'
-                        ],
-                        [
-                            "eid222",
-                            "top",
-                            4000,
-                            0,
-                            "linear",
-                            "${glow}",
-                            '133px',
-                            '133px'
-                        ],
-                        [
-                            "eid218",
-                            "scaleY",
-                            4000,
-                            0,
-                            "linear",
-                            "${glow}",
-                            '2.45736',
-                            '2.45736'
                         ]
                     ]
                 }
