@@ -102,6 +102,13 @@ function randomInc(a, b) {
       });
       //Edge binding end
 
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 5000, function(sym, e) {
+         sym.stop();
+         sym.getSymbol("highscores").play();
+
+      });
+      //Edge binding end
+
    })("stage");
    //Edge symbol end:'stage'
 
