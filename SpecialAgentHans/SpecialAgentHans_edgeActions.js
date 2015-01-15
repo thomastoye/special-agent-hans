@@ -422,8 +422,8 @@ function randomInc(a, b) {
          
          sym.stop();
          
-         // generate ~100 wires
-         for(var i = 0; i < 100; i++) {
+         // generate wires
+         for(var i = 0; i < 35; i++) {
          	// create new wire symbol
          	var newWire = sym.createChildSymbol("grey_cable", sym.$("wire_container"));
          	var el = newWire.getSymbolElement();
