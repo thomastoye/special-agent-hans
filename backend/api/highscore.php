@@ -22,8 +22,8 @@ if (!($stmt = $mysqli->prepare("INSERT INTO wa_opdr2_highscores(name, score) VAL
     echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
 }
 
-$name = $_POST["name"];
-$score = $_POST["score"];
+$name = htmlentities($_POST["name"]);
+$score = htmlentities($_POST["score"]);
 
 echo "name " . $name . " score " . $score . "\n\n";
 
