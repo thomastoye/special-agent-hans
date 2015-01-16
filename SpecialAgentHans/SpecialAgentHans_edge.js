@@ -507,30 +507,31 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'bg',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            font: ['Lucida Console, Monaco, monospace', [12, 'px'], 'rgba(23,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'scrolling_text',
                             text: 'Loading...<br><br>',
-                            type: 'text',
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto']
+                            font: ['Lucida Console, Monaco, monospace', [12, 'px'], 'rgba(23,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
+                            type: 'text'
                         },
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'terminal_container',
                             stroke: [0, 'rgba(0,0,0,1)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(192,192,192,0.00)']
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            rect: [null, null, '800px', '480px']
+                            isStage: 'true',
+                            rect: [undefined, undefined, '800px', '480px']
                         }
                     }
                 },
@@ -960,6 +961,13 @@
                         },
                         {
                             rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            id: 'bg2',
+                            type: 'image',
+                            display: 'none',
+                            fill: ['rgba(0,0,0,0)', 'images/bg.jpg', '0px', '0px']
+                        },
+                        {
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             type: 'rect',
                             id: 'bg_red',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
@@ -1089,6 +1097,26 @@
                             "${score}",
                             '0',
                             '1'
+                        ],
+                        [
+                            "eid226",
+                            "display",
+                            1000,
+                            0,
+                            "linear",
+                            "${bg2}",
+                            'none',
+                            'block'
+                        ],
+                        [
+                            "eid227",
+                            "display",
+                            2000,
+                            0,
+                            "linear",
+                            "${bg2}",
+                            'block',
+                            'none'
                         ],
                         [
                             "eid109",
@@ -1583,103 +1611,104 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
                             id: 'bg',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
-                            rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(0,0,0,1.00)']
                         },
                         {
-                            type: 'text',
                             rect: ['219px', '129px', '564px', '179px', 'auto', 'auto'],
-                            display: 'block',
-                            id: 'briefing',
-                            text: 'Being a special agent is hard. Hans is hungry.<br><br>Help him to fill his cup with delicious Coyro soup!<br><br>Click on the stage to move the cup.',
+                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             align: 'left',
-                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
+                            id: 'briefing',
+                            text: 'Being a special agent is hard. Hans is hungry.<br><br>Help him to fill his cup with delicious Coyro soup but avoid chocolate milk!<br><br>Click on the stage to move the cup.',
+                            display: 'block',
+                            type: 'text'
                         },
                         {
-                            type: 'text',
                             rect: ['219px', '36px', '581px', '67px', 'auto', 'auto'],
+                            font: ['Lucida Console, Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
                             id: 'title',
                             text: '#HUNGRY',
                             display: 'block',
-                            font: ['Lucida Console, Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1.00)', 'normal', 'none', '', 'break-word', 'normal']
-                        },
-                        {
-                            transform: [[], ['180'], [0, 0, 0], [1, 1, 1]],
-                            id: 'startbutton',
-                            display: 'block',
-                            symbolName: 'back_button',
-                            rect: ['620px', '364px', null, null, 'auto', 'auto'],
-                            type: 'rect'
-                        },
-                        {
-                            type: 'image',
-                            display: 'block',
-                            rect: ['-62px', '70px', '353px', '498px', 'auto', 'auto'],
-                            id: 'spoon',
-                            fill: ['rgba(0,0,0,0)', 'images/spoon.svg', '0px', '0px']
-                        },
-                        {
-                            type: 'text',
-                            rect: ['-102px', '98px', '271px', '54px', 'auto', 'auto'],
-                            display: 'none',
-                            id: 'score',
-                            text: '{{tmpscore}}',
-                            align: 'center',
-                            font: ['\'Lucida Console\', Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
+                            type: 'text'
                         },
                         {
                             type: 'rect',
+                            transform: [[], ['180']],
+                            display: 'block',
+                            symbolName: 'back_button',
+                            rect: ['620px', '364px', null, null, 'auto', 'auto'],
+                            id: 'startbutton'
+                        },
+                        {
+                            rect: ['-62px', '70px', '353px', '498px', 'auto', 'auto'],
+                            id: 'spoon',
+                            type: 'image',
+                            display: 'block',
+                            fill: ['rgba(0,0,0,0)', 'images/spoon.svg', '0px', '0px']
+                        },
+                        {
+                            rect: ['-102px', '98px', '271px', '54px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [36, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
+                            align: 'center',
+                            id: 'score',
+                            text: '{{tmpscore}}',
+                            display: 'none',
+                            type: 'text'
+                        },
+                        {
                             rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'royco_cont',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
                             display: 'none',
                             fill: ['rgba(0,0,0,0.00)']
                         },
                         {
-                            type: 'image',
-                            display: 'none',
                             rect: ['625px', '343px', '175px', '226px', 'auto', 'auto'],
                             id: 'mok',
+                            type: 'image',
+                            display: 'none',
                             fill: ['rgba(0,0,0,0)', 'images/mok.svg', '0px', '0px']
                         },
                         {
-                            type: 'rect',
                             rect: ['0px', '0px', '800px', '480px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'click_intercept',
                             stroke: [0, 'rgb(0, 0, 0)', 'none'],
                             display: 'none',
                             fill: ['rgba(0,0,0,0.00)']
                         },
                         {
-                            type: 'text',
                             rect: ['0px', '-195px', '800px', '137px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [65, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             id: 'Text9',
                             text: 'Good work!',
                             align: 'center',
-                            font: ['\'Lucida Console\', Monaco, monospace', [65, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
+                            type: 'text'
                         },
                         {
-                            type: 'text',
                             rect: ['836px', '251px', '544px', '137px', 'auto', 'auto'],
+                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal'],
                             id: 'Text10',
                             text: 'You can now continue to the final stage. Be warned, it\'s dangerous out there!',
                             align: 'left',
-                            font: ['\'Lucida Console\', Monaco, monospace', [24, 'px'], 'rgba(39,255,0,1)', '400', 'none solid rgb(39, 255, 0)', 'normal', 'break-word', 'normal']
+                            type: 'text'
                         },
                         {
-                            rect: ['637px', '376px', null, null, 'auto', 'auto'],
+                            type: 'rect',
                             id: 'back_button3',
                             symbolName: 'back_button',
-                            type: 'rect',
-                            transform: [[], ['180'], [0, 0, 0], [1, 1, 1]]
+                            transform: [[], ['180']],
+                            rect: ['637px', '376px', null, null, 'auto', 'auto']
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            rect: [null, null, '800px', '480px']
+                            isStage: 'true',
+                            rect: [undefined, undefined, '800px', '480px']
                         }
                     }
                 },

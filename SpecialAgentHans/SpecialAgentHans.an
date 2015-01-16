@@ -110,7 +110,7 @@
 	"CompZoomFactor":"100",
 	"expanded:images/menu_title_white.png":"nil",
 	"colorSwatches":"rgba(39,255,0,1.00)",
-	"nextElementColorIndex":"4",
+	"nextElementColorIndex":"5",
 	"expanded:images/Hans.svg":"nil",
 	"game_over-Default Timeline_mark_ms":"-1",
 	"HTMLFileName":"SpecialAgentHans.html",
@@ -447,6 +447,8 @@
 			"animationEnabled":"false",
 			"timelineColor":"0xdb619d"}},
 	"highscores-Default Timeline_playhead_ms":"0",
+	"expanded:images/bg.jpg":"nil",
+	"pref__general__GenerateSmoothTransitions":"true",
 	"symbol_Preloader":{
 		"defaultStageParentWidth":"800px",
 		"defaultStageParentHeight":"480px",
@@ -713,6 +715,11 @@
 			"timelineColor":"0x00a9fa",
 			"animationEnabled":"true",
 			"invisible":"false"},
+		"element_${bg2}":{
+			"timelineColor2":"0x1aa38f",
+			"timelineColor3":"0x2a6a61",
+			"animationEnabled":"true",
+			"timelineColor":"0x00bda4"},
 		"element_${next_game}":{
 			"timelineColor2":"0x1aa38f",
 			"timelineColor3":"0x2a6a61",
@@ -746,13 +753,15 @@
 		"element_${bg_red}":{
 			"timelineColor2":"0x81aa62",
 			"timelineColor3":"0x5b6c4d",
+			"timelineColor":"0x91c767",
 			"animationEnabled":"true",
-			"timelineColor":"0x91c767"},
+			"invisible":"true"},
 		"element_${bg}":{
 			"timelineColor2":"0x81aa62",
 			"timelineColor3":"0x5b6c4d",
+			"timelineColor":"0x91c767",
 			"animationEnabled":"false",
-			"timelineColor":"0x91c767"},
+			"invisible":"false"},
 		"element_${Text7}":{
 			"timelineColor2":"0x168c84",
 			"timelineColor3":"0x2a605c",
@@ -908,7 +917,7 @@
 			"timelineTreeOpened":"true",
 			"timelineColor3":"0x4a485e"},
 		"defaultStageParentWidth":"800px"},
-	"TransitionIdCounter":"226",
+	"TransitionIdCounter":"228",
 	"minigame_2-Default Timeline_playhead_ms":"0",
 	"viewStartY":"0",
 	"symbol_back_button":{
@@ -931,9 +940,9 @@
 			"timelineColor3":"0x385063",
 			"timelineColor":"0x2f73ad"}},
 	"expanded:images/cable_grey.svg":"nil",
-	"pref__general__GenerateSmoothTransitions":"true",
+	"expanded:images/royco-1.bak.png":"nil",
 	"post_score-Default Timeline_playhead_ms":"0",
-	"stage-Default Timeline_playhead_ms":"7231",
+	"stage-Default Timeline_playhead_ms":"7414",
 	"expanded:images/royco-2.png":"nil",
 	"symbol_submit_button":{},
 	"symbol_glow":{

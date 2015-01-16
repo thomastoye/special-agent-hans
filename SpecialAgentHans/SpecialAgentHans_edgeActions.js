@@ -242,7 +242,7 @@ function randomInc(a, b) {
          	$(window).off("keyup", ev);
          	clearTimeout(timeout);
          	sym.stop("game_aftermath");
-         }, 10 * 1000);
+         }, 7 * 1000);
 
       });
       //Edge binding end
@@ -454,7 +454,7 @@ function randomInc(a, b) {
          
          setTimeout(function() {
          	sym.stop("wrapup");
-         }, 15000)
+         }, 5000)
 
       });
       //Edge binding end
@@ -615,7 +615,7 @@ function randomInc(a, b) {
          sym.stop();
          updateScore();
          
-         for(var i = 0; i < 300; i++) {
+         for(var i = 0; i < 100; i++) {
          	// create new royco symbol
          	var newRoyco = sym.createChildSymbol("royco", sym.$("royco_cont"));
          	var el = newRoyco.getSymbolElement();
@@ -640,20 +640,24 @@ function randomInc(a, b) {
          					var mokCenter = sym.$("mok").offset().left + sym.$("mok").width() / 2 + 250;
          					if(Math.abs(thisCenter - mokCenter) < 50) {
          						$(this).fadeOut();
-         						tmpScore++;
+         						if($(this).children().css("background-image").endsWith('-1.png")')) {
+         							tmpScore--;
+         						} else {
+         							tmpScore++;
+         						}
          					}
          					updateScore();
          					$(this).animate({"top": "+=200px"}, {complete: function(){ $(this).remove(); }})
          
          				} 
          			});
-         		}, randomInc(0,45000));
+         		}, randomInc(0,15000));
          	})(el);
          }
          
          setTimeout(function() {
          	sym.play("wrapup");
-         }, 47000);
+         }, 17000);
 
       });
       //Edge binding end
